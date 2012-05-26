@@ -1,0 +1,121 @@
+<?php
+
+
+
+class DatabaseChooser
+{
+	public function getDatabase()
+	{
+		return $this->findDatabaseName();
+	}
+	
+	private function findDatabaseName()
+	{
+		if($_SERVER['HTTP_HOST'] == "animal-kingdom.coasterq.com")
+		{
+			return 'coaste6_animalkingdom';
+		}
+		else if($_SERVER['HTTP_HOST'] == "busch-gardens-tampa.coasterq.com")
+		{
+			return 'coaste6_buschgardenstampa';
+		}
+		else if($_SERVER['HTTP_HOST'] == "disneyland.coasterq.com")
+		{
+			return 'coaste6_disneyland';
+		}
+		else if($_SERVER['HTTP_HOST'] == "disneyland-park.coasterq.com")
+		{
+			return 'coaste6_parcdisneyland';
+		}
+		else if($_SERVER['HTTP_HOST'] == "epcot.coasterq.com")
+		{
+			return 'coaste6_epcot';
+		}
+		else if($_SERVER['HTTP_HOST'] == "hollywood-studios.coasterq.com")
+		{
+			return 'coaste6_hollywoodstudios';
+		}
+		else if($_SERVER['HTTP_HOST'] == "islands-of-adventure.coasterq.com")
+		{
+			return 'coaste6_islandsOfAdventure';
+		}
+		else if($_SERVER['HTTP_HOST'] == "knotts-berry-farm.coasterq.com")
+		{
+			return 'coaste6_knottsberryfarm';
+		}
+		else if($_SERVER['HTTP_HOST'] == "legoland-california.coasterq.com")
+		{
+			return 'coaste6_legolandcalifornia';
+		}
+		else if($_SERVER['HTTP_HOST'] == "magic-mountain.coasterq.com")
+		{
+			return 'coaste6_magicmountain';
+		}
+		else if($_SERVER['HTTP_HOST'] == "over-texas.coasterq.com")
+		{
+			return 'coaste6_overtexas';
+		}
+		else if($_SERVER['HTTP_HOST'] == "seaworld-orlando.coasterq.com")
+		{
+			return 'coaste6_seaworldorlando';
+		}
+		else if($_SERVER['HTTP_HOST'] == "tokyo-disneyland.coasterq.com")
+		{
+			return 'coaste6_tokyodisneyland';
+		}
+		else if($_SERVER['HTTP_HOST'] == "tokyo-disneysea.coasterq.com")
+		{
+			return 'coaste6_tokyodisneysea';
+		}
+		else if($_SERVER['HTTP_HOST'] == "universal-studios-florida.coasterq.com")
+		{
+			return 'coaste6_universalStudiosFlorida';
+		}
+		else if($_SERVER['HTTP_HOST'] == "universal-studios-hollywood.coasterq.com")
+		{
+			return 'coaste6_universalStudiosHollywood';
+		}
+		else if($_SERVER['HTTP_HOST'] == "walt-disney-studios-park.coasterq.com")
+		{
+			return 'coaste6_waltdisneystudiospark';
+		}
+		else if($_SERVER['HTTP_HOST'] == "magic-kingdom.coasterq.com")
+		{
+			return 'coaste6_magickingdom';
+		}
+		else if($_SERVER['HTTP_HOST'] == "california-adventure.coasterq.com")
+		{
+			return 'coaste6_californiaadventure';
+		}
+		else if($_SERVER['HTTP_HOST'] == "great-adventure.coasterq.com")
+		{
+			return 'coaste6_greatadventure';
+		}
+		else if($_SERVER['HTTP_HOST'] == "great-america.coasterq.com")
+		{
+			return 'coaste6_greatamerica';
+		}
+		else if($_SERVER['HTTP_HOST'] == "over-georgia.coasterq.com")
+		{
+			return 'coaste6_overgeorgia';
+		}
+		else if($_SERVER['HTTP_HOST'] == "discovery-kingdom.coasterq.com")
+		{
+			return 'coaste6_discoverykingdom';
+		}
+		else if($_SERVER['HTTP_HOST'] == "seaworld-san-antonio.coasterq.com")
+		{
+			return 'coaste6_seaworldorlando';
+		}
+		else if($_SERVER['HTTP_HOST'] == "kentucky-kingdom.coasterq.com")
+		{
+			return 'coaste6_kentuckykingdom';
+		}
+		else if($_SERVER['HTTP_HOST'] == "six-flags-america.coasterq.com")
+		{
+			return 'coaste6_sixflagsamerica';
+		}
+	}
+}
+
+?>

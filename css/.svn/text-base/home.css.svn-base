@@ -1,0 +1,81 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;	
+}
+#logo {
+	text-align: center;
+}
+
+img {
+	border:none;
+}
+
+#head hr{
+	background: #EEFFEE;
+	color: #EEFFEE;
+	border: 9px solid #EEFFEE;
+}
+
+hr {
+	background: #6600CC;
+	color: #6600CC;
+	border: 1px solid #6600CC;
+}
+#parks a {
+	text-decoration: none;
+	color: #6600CC;
+}
+
+#noscriptparks a {
+	text-decoration: none;
+	color: #6600CC;
+}
+
+#noscriptparks table{
+	background: #EEFFEE;
+	text-align: center;
+	color: #6600CC;
+	width:50%;
+}
+
+#parks table{
+	background: #EEFFEE;
+	text-align: center;
+	color: #6600CC;
+	width:50%;
+}
+
+#site a
+{
+	color: #47C3A6;
+}
+
+#des
+{
+	font-size:small;
+	text-align: center;
+	font-family: Arial;
+	color: #6600CC;
+}
+
+#parks table h3 a{
+	font-family: Arial;
+}
+
+#text table{
+	background: #EEFFEE;
+	text-align: left;
+	color: #6600CC;
+	width:80%;
+}
+
+#text a
+{
+	text-decoration: none;
+}
+
+h3{
+	text-align: center;
+	color: #6600CC;
+}

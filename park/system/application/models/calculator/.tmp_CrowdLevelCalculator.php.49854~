@@ -1,0 +1,441 @@
+<?php
+
+
+
+class CrowdLevelCalculator
+{
+	// -------------------------------------------------------------------------
+	// Constants
+	// -------------------------------------------------------------------------
+	
+	const CROWD_LEVEL_1 = "crowd level 1";//lowest level
+	const CROWD_LEVEL_2 = "crowd level 2";
+ 	const CROWD_LEVEL_3 = "crowd level 3";
+ 	const CROWD_LEVEL_4 = "crowd level 4";//highest level
+	
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+ 	
+ 	public function getCrowdLevelFromParkClock($parkClock)
+	{
+		$day = $parkClock->getDayOfMonth();
+		$month = $parkClock->getMonth();
+		
+		return $this->getCrowdLevel($day, $month);
+	}
+	
+	public function getCrowdLevelFromTimestamp($timestamp)
+	{
+		$day = $this->getDayOfMonth($timestamp);
+		$month = $this->getMonth($timestamp);
+		
+		return $this->getCrowdLevel($day, $month);
+	}
+ 	
+	public function getCrowdLevel($day, $month)
+	{
+		if($this->isHighLevel($day, $month))
+		{
+			return CrowdLevelCalculator::CROWD_LEVEL_4;
+		}
+		else if($this->isMediumLevel($day, $month))
+		{
+			return CrowdLevelCalculator::CROWD_LEVEL_3;
+		}
+		else if($this->isLowLevel($day, $month))
+		{
+			return CrowdLevelCalculator::CROWD_LEVEL_2;
+		}
+		else
+		{
+			return CrowdLevelCalculator::CROWD_LEVEL_1;
+		}
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+ 	
+ 	private function isHighLevel($day, $month)
+	{
+        //January 2010
+        if ($month == 1)
+        {
+            //January 1  or January 2
+            if ($day == 1 || $day == 2)
+            {
+                return true;
+            }
+        }
+        //February  2010
+        else if ($month == 2)
+        {
+        
+            //February
+            if ($day == 13 || $day == 14)
+            {
+                return true;
+            }
+        }
+        
+        //March  2010
+        else if ($month == 3)
+        {
+            if ($day == 13 || $day == 20 || $day == 27)
+            {
+                return true;
+            }
+        }
+        
+        //April
+        else if ($month == 4)
+        {
+            //April 10 or April 11 or…
+            if ($day == 4 || $day == 10 || $day == 11 || $day == 18 || 
+				$day == 25)
+            {
+                return true;
+            }
+        }
+        
+        //May
+        else if ($month == 5)
+        {
+            if ($day == 2 || $day == 9 || $day == 16 || $day == 23 || 
+				$day == 24 || $day == 30)
+            {
+                return true;
+            }
+        }
+        
+        //June
+        else if ($month == 6)
+        {
+            if ($day == 6 || $day == 13 || $day == 20 || $day == 27)
+            {
+                return true;
+            }
+        }
+        
+        //July
+        else if ($month == 7)
+        {
+            if ($day == 4 || $day == 11 || $day == 18 || $day == 25)
+            {
+                return true;
+            }
+        }
+        
+        //August
+        else if ($month == 8)
+        {
+            if ($day == 1 || $day == 8 || $day == 15)
+            {
+                return true;
+            }
+        }
+        
+        //September
+        else if ($month == 9)
+        {
+            if ($day == 5 || $day == 6)
+            {
+                return true;
+            }
+        }
+        
+        //October
+        else if ($month == 10)
+        {
+        
+        }
+        
+        //November
+        else if ($month == 11)
+        {
+            if ($day == 26 || $day == 27 || $day == 28)
+            {
+                return true;
+            }
+        }
+        
+        //December
+        else if ($month == 12)
+        {
+            if ($day == 24 || $day == 25 || $day == 26 || $day == 27 || 
+				$day == 28 || $day == 29 || $day == 30 || $day == 31)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+	}
+ 	
+	private function isMediumLevel($day, $month)
+	{
+        //January 2010
+        if ($month == 1)
+        {
+            if ($day == 2 || $day == 9 || $day == 16 || $day == 17 || 
+				$day == 23 || $day == 30)
+            {
+                return true;
+            }
+        }
+        //February 2010
+        else if ($month == 2)
+        {
+            if ($day == 6 || $day == 13 || $day == 20 || $day == 27)
+            {
+                return true;
+            }
+        }
+        
+        //March 2010
+        else if ($month == 3)
+        {
+            if ($day == 6)
+            {
+                return true;
+            }
+        }
+        
+        //April$day == 13 |
+        else if ($month == 4)
+        {
+            if ($day == 5 || $day == 6 || $day == 7 || $day == 8 || 
+				$day == 9 || $day == 10 || $day == 11 || $day == 12 || 
+				$day == 13 || $day == 14 || $day == 15 || $day == 16 || 
+				$day == 17 || $day == 18)
+            {
+                return true;
+            }
+        }
+        
+        //May
+        else if ($month == 5)
+        {
+        
+        }
+        
+        //June
+        else if ($month == 6)
+        {
+            if ($day == 28 || $day == 29 || $day == 30)
+            {
+                return true;
+            }
+        }
+        
+        //July
+        else if ($month == 7)
+        {
+            if ($day == 1 || $day == 2 || $day == 3 || $day == 4 || 
+				$day == 5 || $day == 6 || $day == 7 || $day == 8 || 
+				$day == 9 || $day == 10 || $day == 11 || $day == 12 || 
+				$day == 13 || $day == 14 || $day == 15 || $day == 16 || 
+				$day == 17 || $day == 18 || $day == 19 || $day == 20 || 
+				$day == 21 || $day == 22 || $day == 23 || $day == 24 || 
+				$day == 25 || $day == 26 || $day == 27 || $day == 28 || 
+				$day == 29 || $day == 30 || $day == 31)
+            {
+                return true;
+            }
+        }
+        
+        //August
+        else if ($month == 8)
+        {
+            if ($day == 1 || $day == 2 || $day == 3 || $day == 4 || 
+				$day == 5 || $day == 6 || $day == 7 || $day == 8 || 
+				$day == 9 || $day == 10 || $day == 11 || $day == 12 || 
+				$day == 13 || $day == 14 || $day == 15 || $day == 2 || 
+				$day == 29)
+            {
+                return true;
+            }
+        }
+        
+        //September
+        else if ($month == 9)
+        {
+            if ($day == 5 || $day == 12 || $day == 19 || $day == 26)
+            {
+                return true;
+            }
+        }
+        
+        //October
+        else if ($month == 10)
+        {
+            if ($day == 3 || $day == 10 || $day == 17 || $day == 24 || 
+				$day == 31)
+            {
+                return true;
+            }
+        }
+        
+        //November
+        else if ($month == 11)
+        {
+            if ($day == 7 || $day == 14 || $day == 21 || $day == 28)
+            {
+                return true;
+            }
+        }
+        
+        //December
+        else if ($month == 12)
+        {
+            if ($day == 19 || $day == 20 || $day == 21 || $day == 22 || 
+				$day == 23 || $day == 24 || $day == 25 || $day == 26)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+	}
+
+	private function isLowLevel($day, $month)
+	{
+        //January 2010
+        if ($month == 1)
+        {
+            if ($day == 3 || $day == 10 || $day == 17 || 
+				$day == 18 || $day == 24 || $day == 31)
+            {
+                return true;
+            }
+        }
+        //February 2010
+        else if ($month == 2)
+        {
+            if ($day == 7 || $day == 14 || $day == 21 || $day == 28)
+            {
+                return true;
+            }
+        }
+        
+        //March 2010
+        else if ($month == 3)
+        {
+            if ($day == 7 || $day == 14 || $day == 21 || $day == 28)
+            {
+                return true;
+            }
+        }
+        
+        //April
+        else if ($month == 4)
+        {
+            if ($day == 3 || $day == 5 || $day == 10 || $day == 12 || 
+				$day == 17 || $day == 19 || $day == 24 || $day == 26)
+            {
+                return true;
+            }
+        }
+        
+        //May
+        else if ($month == 5)
+        {
+            if ($day == 3 || $day == 10 || $day == 17 || $day == 22 || 
+				$day == 24 || $day == 29 || $day == 31)
+            {
+                return true;
+            }
+        }
+        
+        //June
+        else if ($month == 6)
+        {
+            if ($day == 3 || $day == 4 || $day == 5 || $day == 6 || 
+				$day == 7 || $day == 10 || $day == 11 || $day == 12 || 
+				$day == 13 || $day == 14 || $day == 17 || $day == 18 || 
+				$day == 19 || $day == 20 || $day == 21 || $day == 22 || 
+				$day == 23 || $day == 24 || $day == 25 || $day == 26 || 
+				$day == 27 || $day == 28 || $day == 29 || $day == 30)
+            {
+                return true;
+            }
+        }
+        
+        //July
+        else if ($month == 7)
+        {
+        
+        }
+        
+        //August
+        else if ($month == 8)
+        {
+            if ($day == 2 || $day == 9 || $day == 16 || $day == 21 || 
+				$day == 23 || $day == 30)
+            {
+                return true;
+            }
+        }
+        
+        //September
+        else if ($month == 9)
+        {
+            if ($day == 6 || $day == 13 || $day == 20 || $day == 27)
+            {
+                return true;
+            }
+        }
+        
+        //October
+        else if ($month == 10)
+        {
+            if ($day == 4 || $day == 11 || $day == 18 || $day == 25)
+            {
+                return true;
+            }
+        }
+        
+        //November
+        else if ($month == 11)
+        {
+            if ($day == 1 || $day == 8 || $day == 11 || $day == 15 || 
+				$day == 22 || $day == 29)
+            {
+                return true;
+            }
+        }
+        
+        //December
+        else if ($month == 12)
+        {
+            if ($day == 6 || $day == 13 || $day == 18 || $day == 19 || 
+				$day == 20 || $day == 27)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+	}
+	
+	/**
+	 * Get the day of the month
+	 * @return 
+	 */
+	private function getDayOfMonth($timestamp)
+	{
+		return date("j",$timestamp);
+	}
+
+	/**
+	 * Get the month of the park
+	 * @return 
+	 */
+	private function getMonth($timestamp)
+	{
+		return date("n",$timestamp);
+	}
+}
+
+?>

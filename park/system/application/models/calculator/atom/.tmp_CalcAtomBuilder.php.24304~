@@ -1,0 +1,89 @@
+<?php
+
+require_once('From20MinAverageTimeCalcAtom.php');
+require_once('FromOneHourAverageTimeCalcAtom.php');
+require_once('From3HoursAverageTimeCalcAtom.php');
+require_once('FromTheDayAverageTimeCalcAtom.php');
+require_once('ForOneDayBeforeAverageTimeCalcAtom.php');
+require_once('ForTwoDaysBeforeAverageTimeCalcAtom.php');
+require_once('ForOneWeekBeforeAverageTimeCalcAtom.php');
+require_once('ForTwoWeeksBeforeAverageTimeCalcAtom.php');
+require_once('ForOneYearBeforeAverageTimeCalcAtom.php');
+require_once('ForOneYearOneDayBeforeAverageTimeCalcAtom.php');
+require_once('ForOneYearOneWeekBeforeAverageTimeCalcAtom.php');
+
+class CalcAtomBuilder
+{
+	// -------------------------------------------------------------------------
+	// Private Variables
+	// -------------------------------------------------------------------------
+	
+ 	private $rideWaitRetriever;
+	private $crowdLevelCalculator;
+	private $parkClock;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+	function __construct($rideWaitRetriever, $parkClock, 
+		$crowdLevelCalculator)
+	{
+		$this->rideWaitRetriever = $rideWaitRetriever;
+		$this->crowdLevelCalculator = $crowdLevelCalculator;
+		$this->parkClock = $parkClock;
+	}
+	
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+	
+	public function build()
+	{
+		$calcAtoms = array();
+		
+		array_push($calcAtoms, 
+			new From20MinAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new FromOneHourAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+
+		array_push($calcAtoms, 
+			new From3HoursAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+						
+		array_push($calcAtoms, 
+			new FromTheDayAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+
+		array_push($calcAtoms, 
+			new ForOneDayBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new ForOneWeekBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new ForTwoWeeksBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new ForOneYearBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new ForOneYearOneDayBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		array_push($calcAtoms, 
+			new ForOneYearOneWeekBeforeAverageTimeCalcAtom($this->rideWaitRetriever, 
+				$this->parkClock, $this->crowdLevelCalculator));
+				
+		return $calcAtoms;
+	}
+}
+
+?>

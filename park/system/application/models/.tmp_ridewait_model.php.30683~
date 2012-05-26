@@ -1,0 +1,220 @@
+<?php
+require_once('persistence/RideWait.php');
+require_once('calculator/ParkClock.php');
+
+class RideWait_model extends Model
+{
+	const TIME_30_MIN = 1800;
+	const TIME_4_hours = 14400;
+		
+	public function RideWait_model()
+	{
+		parent::Model();
+	}
+
+	public function addRideWait($user, $rideId, $dateTime, $waitMin)
+	{
+		$newRideWait = new RideWait();
+
+		$newRideWait->setRideId($rideId);
+
+		$newRideWait->setUserId($user->getId());
+
+		$newRideWait->setDateTimeInLine($dateTime);
+
+		$newRideWait->setWaitTime($waitMin);
+
+		$newRideWait->save();
+	}
+
+	/**
+	 * Get the current wait time for the date time passed in
+	 *
+	 * @param number $rideId
+	 * @param date $dateTime
+	 *
+	 * @return number the number of minutes wait
+	 */
+	public function getCurrentRideWait($rideId, $dateTime)
+	{
+		return 78;
+	}
+
+	/**
+	 * Get the average wait time for the day passed in
+	 *
+	 * @param number $rideId ride id for the average wanted
+	 * @param date $date the date for the average wanted
+	 *
+	 * @return number the average of minutes wait
+	 */
+	public function getAverageWait($rideId, $date)
+	{
+		return 20;
+	}
+
+	/**
+	 * Get the next shortest wait time for the rest of the day.
+	 *
+	 * @param number $rideId
+	 * @param date $dateTime
+	 *
+	 * @return datetime the time of the shortest wait time.
+	 */
+	public function getNextShortestWaitTime($rideId, $dateTime)
+	{
+		return mktime(12, 0, 0);
+	}
+	
+	public function clearAll()
+	{
+		RideWaitPeer::doDeleteAll();
+	}
+
+	public function isRideWaitValid($user, $rideId, $waitMin, $timeMin, 
+		$timeHour, $dayOfMonth, $month, $year)
+	{
+		if(!$this->areValuesNonNull($user, $rideId, $waitMin, $timeMin, 
+			$timeHour, $dayOfMonth, $month, $year))
+		{
+			return false;
+		}
+		
+		if($this->areThereAnyEntriesInLast30Mins($user, $rideId, $timeMin, 
+			$timeHour, $dayOfMonth, $month, $year))
+		{
+			return false;
+		}
+		
+		if(!$this->isTimeOfDayValid($timeMin, $timeHour, 
+			$dayOfMonth, $month, $year))
+		{
+			return false;
+		}
+		
+		if(!$this->isDateValid($dayOfMonth, $month, $year))
+		{
+			return false;
+		}
+		
+		if(!$this->isParkOpen($timeMin, $timeHour, $dayOfMonth, $month, $year))
+		{
+			return false;
+		}
+		
+		if(!$this->isTheWaitTimeValid($waitMin))
+		{
+			return false;
+		}
+		
+		return true;
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+	
+	private function isTheWaitTimeValid($waitMin)
+	{
+		if($waitMin >= 15 && $waitMin <= 295)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	private function isParkOpen($timeMin, $timeHour, $dayOfMonth, $month, $year)
+	{
+		$date = mktime($timeHour, $timeMin, 0, $month, $dayOfMonth, $year);
+		
+		$parkClock = new ParkClock($date);
+		
+		if($parkClock->isOpen())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	private function isDateValid($dayOfMonth, $month, $year)
+	{
+		$parkClock = new ParkClock();
+		
+		if($parkClock->getDayOfMonth() == $dayOfMonth && 
+			$parkClock->getMonth() == $month && $parkClock->getYear() == $year)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	private function isTimeOfDayValid($timeMin, $timeHour, $dayOfMonth, 
+		$month, $year)
+	{
+		$date = mktime($timeHour, $timeMin, 0, $month, $dayOfMonth, $year);
+		
+		$parkClock = new ParkClock();
+		
+		$timdDiffFromNow = $parkClock->getTime() - $date;
+		
+		if($timdDiffFromNow < RideWait_model::TIME_4_hours)
+		{
+			return true;
+		}
+		else
+		{
+			return false;	
+		}
+	}
+	
+	private function areThereAnyEntriesInLast30Mins($user, $rideId, 
+		$timeMin, $timeHour, $dayOfMonth, $month, $year)
+	{
+		$criteria = new Criteria();
+
+		$endOfDay = mktime($timeHour, $timeMin, 0, $month, $dayOfMonth, $year);
+		$startOfDay = $endOfDay - RideWait_model::TIME_30_MIN;
+
+		$criteria->add(RideWaitPeer::RIDE_ID, $rideId);
+		$criteria->add(RideWaitPeer::USER_ID, $user->getId());
+		$criteria->add(RideWaitPeer::DATE_TIME_IN_LINE, $startOfDay,
+			Criteria::GREATER_EQUAL);
+		$criteria->addAnd(RideWaitPeer::DATE_TIME_IN_LINE, $endOfDay,
+			Criteria::LESS_EQUAL);
+
+		$rideWaits = RideWaitPeer::doSelect($criteria);
+
+		if(count($rideWaits) > 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	private function areValuesNonNull($user, $rideId, $waitMin, $timeMin, 
+		$timeHour, $dayOfMonth, $month, $year)
+	{
+		if($user && $rideId && $waitMin && $timeHour && $timeMin && $dayOfMonth
+			&& $month && $year)
+		{
+			return true;	
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+?>

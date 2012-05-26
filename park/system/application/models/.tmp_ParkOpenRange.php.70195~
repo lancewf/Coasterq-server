@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * 
+ */
+class ParkOpenRange
+{
+	private $openHour;
+	private $openMin;
+	private $closeHour;
+	private $closeMin;
+	private $day;
+	private $month;
+	private $year;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+	function __construct()
+	{
+		
+	}
+	
+	public function setOpenHour($openHour)
+	{
+		$this->openHour = $openHour;
+	}
+	
+	public function setOpenMin($openMin)
+	{
+		$this->openMin = $openMin;
+	}
+	
+	public function setCloseHour($closeHour)
+	{
+		$this->closeHour = $closeHour;
+	}
+	
+	public function setCloseMin($closeMin)
+	{
+		$this->closeMin = $closeMin;
+	}
+	
+	public function setDay($day)
+	{
+		$this->day = $day;
+	}
+	
+	public function setMonth($month)
+	{
+		$this->month = $month;
+	}
+	
+	public function setYear($year)
+	{
+		$this->year = $year;
+	}
+	
+	public function getOpenHour()
+	{
+		return $this->openHour;
+	}
+	
+	public function getOpenMin()
+	{
+		return $this->openMin;
+	}
+	
+	public function getCloseHour()
+	{
+		return $this->closeHour;
+	}
+	
+	public function getCloseMin()
+	{
+		return $this->closeMin;
+	}
+	
+	public function getDay()
+	{
+		return $this->day;
+	}
+	
+	public function getMonth()
+	{
+		return $this->month;
+	}
+	
+	public function getYear()
+	{
+		return $this->year;
+	}
+}
+
+?>

@@ -1,0 +1,2237 @@
+# Webalizer V2.01-10 Incremental Data - 04/06/2011 19:57:22
+2011 4 6 19 57 22
+9512 8811 410 57 165 45 26768634 7091 757 0
+79 112 311 1 6
+1283 1146 3914664 96 915 125
+1038 951 3019434 102 781 111
+1671 1557 4582023 112 1244 127
+1715 1574 5535660 78 1241 114
+2339 2213 5081920 88 1879 170
+1466 1370 4634933 79 1031 119
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+376 359 762964 320
+333 320 622606 282
+237 230 456525 226
+351 337 927197 260
+252 243 503989 212
+185 177 216261 175
+137 134 128042 133
+291 284 844895 215
+283 272 797031 210
+235 230 700168 186
+436 418 1288515 316
+447 401 1413283 311
+443 393 1798063 317
+285 263 797720 212
+770 741 2739292 511
+550 487 1526266 400
+762 684 2445614 479
+460 450 1570198 333
+749 642 2708986 512
+575 517 1502733 421
+279 263 488931 243
+304 270 529038 251
+384 360 1240461 277
+388 336 759856 289
+0
+0
+0
+8811
+0
+0
+0
+0
+0
+2
+0
+0
+0
+0
+304
+0
+0
+0
+0
+0
+0
+375
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+20
+0
+0
+0
+0
+0
+# -urls- 
+/client/44B46A12F674B52697536B79721E650F.cache.html
+0 64 0 2258948 0 0
+/
+0 6375 0 7257269 735 339
+/resources/images/default/form/trigger.gif
+1 2 0 430 0 0
+/client/8FD4A3C8E1A470FB751DCFAEE482FF15.cache.png
+1 157 0 71470 0 0
+/client/C43A8DC1E50D698B543BF589D0244ECC.cache.png
+1 2 0 432 0 0
+/resources/images/default/grid/grid3-hrow-over.gif
+1 1 0 215 0 0
+/resources/images/default/button/btn.gif
+1 2 0 432 0 0
+/resources/images/default/form/text-bg.gif
+1 2 0 430 0 0
+/client/clear.gif
+1 2 0 428 0 0
+/client/clear.cache.gif
+1 191 0 65986 0 0
+/resources/images/default/panel/tool-sprites.gif
+1 2 0 432 0 0
+/resources/images/default/form/date-trigger.gif
+1 2 0 430 0 0
+/resources/images/default/panel/white-top-bottom.gif
+1 2 0 430 0 0
+/js/FAQNodeTreeBuilder.js
+0 6 0 41238 0 0
+/resources/images/default/panel/corners-sprite.gif
+1 2 0 430 0 0
+/client/F48C09AF880DDE0AC54A92822F1BABE5.cache.html
+0 9 0 415129 0 0
+/img/dot.png
+1 7 0 4564 0 0
+/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+0 50 0 2617284 1 0
+/js/PageHolder.js
+0 6 0 7116 0 0
+/resources/css/gxt-all.css
+0 2 0 480 0 0
+/img/iphoneicon.png
+1 1 0 5253 0 0
+/css/Coasterqhomeclient.css
+0 78 0 734622 0 0
+/sitemap.xml.gz
+0 1 0 713 0 0
+/client/ECA9C8AD56A2AA3F402A7DA8D89E127D.cache.html
+0 1 0 44841 0 0
+/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+0 30 0 1455284 0 0
+/client/client.nocache.js
+0 285 0 757044 0 0
+/resources/images/default/shadow-lr.png
+1 2 0 428 0 0
+/img/fastpass.png
+1 1 3617586 544 0 0
+/resources/images/default/grid/grid3-hrow.gif
+1 1 0 215 0 0
+/img/favicon.gif
+1 171 0 655185 0 0
+/img/height.png
+1 5 0 2910 0 0
+/resources/images/default/grid/invalid_line.gif
+1 1 0 215 0 0
+/css/home.css
+0 81 0 69410 0 0
+/resources/images/default/s.gif
+1 2 0 428 0 0
+/resources/images/default/panel/top-bottom.gif
+1 2 0 430 0 0
+/resources/images/default/toolbar/bg.gif
+1 1 0 215 0 0
+/img/twitter.gif
+1 271 0 422801 0 0
+/css/Coasterqclient.css
+0 254 0 1253048 0 0
+/img/cqlogo.png
+1 280 0 3431126 0 0
+/js/NodeTreeView.js
+0 7 0 7612 0 0
+/client/gwt/standard/standard.css
+0 43 0 202486 0 0
+/js/FAQNodeDisplayer.js
+0 6 0 4284 0 0
+/resources/images/default/grid/grid3-hd-btn.gif
+1 1 0 215 0 0
+/resources/images/default/panel/light-hd.gif
+1 2 0 430 0 0
+/css/MoneyReport.css
+0 2 0 476 0 0
+/resources/images/default/panel/left-right.gif
+1 2 0 430 0 0
+/xd_receiver.htm
+0 338 0 199527 4 49
+/js/GuidGenerator.js
+0 7 0 3977 0 0
+/client/GwtFacebook.css
+0 246 0 173614 0 0
+/client/8BD64DB060AB4E8CEF4AD2E7B4F6D48D.cache.html
+0 11 0 282879 0 0
+/js/Node.js
+0 6 0 9888 0 0
+/client/4DE0F78CE3FBACD0E745368314F44DA3.cache.html
+0 10 0 373763 0 0
+/resources/images/default/shadow-c.png
+1 2 0 428 0 0
+/client/B00C2E3DB97275D04EE591B145F764DF.cache.html
+0 9 0 284204 0 0
+/client/0BC6A758C8819366E807576641858750.cache.html
+0 67 0 3177752 2 0
+/resources/images/default/shadow.png
+1 2 0 430 0 0
+/client/gwt/standard/images/hborder.png
+1 2 0 430 0 0
+# End Of Table - urls
+# -sites- (monthly)
+174.121.74.226
+0 2 1 1756 1 1301692408
+/
+66.249.72.113
+0 2 1 4011 1 1302113674
+/
+66.249.72.114
+0 1 0 1008 0 0
+-
+66.249.72.115
+0 2 2 1514 1 1301794277
+/
+97.103.196.97
+0 18 18 84596 1 1301737286
+/
+66.249.72.117
+0 1 1 477 0 0
+-
+24.217.38.199
+0 1 0 1008 0 0
+-
+66.249.72.118
+0 7 3 13291 4 1302065211
+/
+66.249.72.119
+0 2 1 4078 1 1301763049
+/
+119.63.196.122
+0 1 0 1008 0 0
+-
+119.63.196.125
+0 1 0 1008 0 0
+-
+71.251.47.54
+0 16 16 79918 2 1302036178
+/
+69.168.201.42
+0 215 215 1061292 6 1302108246
+/
+66.249.72.130
+0 1 0 1008 0 0
+-
+66.249.72.131
+0 1 0 1008 0 0
+-
+66.249.72.136
+0 4 2 9752 2 1302021158
+/
+66.249.72.137
+0 1 0 593 1 1302078881
+-
+66.249.72.138
+0 2 2 6568 2 1301788936
+/
+66.249.72.139
+0 3 1 4690 2 1301691767
+/
+66.249.72.141
+0 1 0 1008 0 0
+-
+66.249.72.143
+0 2 1 4038 1 1301686602
+/
+98.137.72.234
+0 6 6 29704 1 1301673074
+/
+99.189.91.126
+0 1 1 13114 1 1301958935
+/
+69.171.224.245
+0 1 1 14218 1 1302016791
+/
+70.100.115.138
+0 17 17 79625 1 1301785984
+/
+12.174.169.117
+0 1 0 160 1 1301992280
+/xd_receiver.htm
+65.13.100.41
+0 17 17 82099 2 1302086405
+/
+76.97.156.249
+0 16 16 79574 1 1301734347
+/
+66.249.72.150
+0 1 1 718 1 1301658464
+/
+66.249.72.151
+0 10 5 24974 2 1302047915
+/
+66.249.72.152
+0 1 0 1008 0 0
+-
+66.249.72.154
+0 1 1 3593 1 1301706822
+/
+66.249.72.155
+0 1 0 1008 0 0
+-
+166.205.9.207
+0 1 0 1008 1 1302106798
+-
+68.59.130.50
+0 18 18 77467 1 1302014624
+/xd_receiver.htm
+66.249.72.161
+0 2 1 1806 1 1301796750
+/
+66.249.72.167
+0 1 0 593 1 1301892165
+-
+66.249.72.168
+0 1 1 3734 1 1301795612
+/
+66.249.72.169
+0 3 1 5514 2 1301798325
+-
+56.0.103.25
+0 351 345 476226 36 1302050828
+/
+72.166.44.254
+0 17 17 80761 1 1301993568
+/
+66.249.72.170
+0 1 0 1008 0 0
+-
+66.249.72.171
+0 2 1 4643 1 1302051283
+/
+66.249.72.174
+0 3 1 15602 0 0
+-
+66.249.72.176
+0 2 1 3718 2 1301801639
+/
+66.249.72.177
+0 6 3 11573 3 1301929497
+/
+66.249.72.179
+0 1 0 1008 0 0
+-
+173.253.147.158
+0 62 53 106970 4 1302094389
+/
+66.249.72.180
+0 1 0 1008 0 0
+-
+66.249.72.181
+0 1 1 797 1 1301652436
+/
+66.249.72.182
+0 1 0 1008 0 0
+-
+74.82.68.144
+0 35 34 171128 6 1301938099
+/
+70.225.136.112
+0 4 2 29398 1 1301961702
+/
+95.108.158.235
+0 4 3 30018 1 1301730525
+/
+24.127.248.110
+0 16 16 79710 1 1302014547
+/
+66.249.72.193
+0 5 3 9573 3 1301918638
+/
+66.249.72.194
+0 1 1 652 0 0
+-
+66.249.72.195
+0 1 0 1008 0 0
+-
+66.249.72.196
+0 1 0 1008 0 0
+-
+66.249.72.197
+0 1 0 1008 0 0
+-
+66.249.72.198
+0 2 1 5112 1 1301631291
+/
+66.249.72.199
+0 2 2 16611 1 1301801539
+/
+24.2.82.156
+0 14 14 75452 1 1301753647
+/
+74.82.68.32
+0 10 5 43536 1 1301921263
+/
+74.82.68.33
+0 7 6 60042 2 1301836722
+/
+74.82.68.34
+0 5 2 40666 1 1301695639
+/
+74.82.68.35
+0 15 9 122933 2 1301921226
+/
+74.82.68.36
+0 15 11 119910 2 1301921050
+/
+99.231.181.30
+0 16 16 77536 1 1302113178
+/
+74.82.68.37
+0 6 5 39868 0 0
+-
+67.195.115.107
+0 6 4 19722 2 1301919118
+/
+98.15.218.253
+0 108 108 271093 1 1301692367
+/
+74.82.68.160
+0 2 2 1455 1 1301654668
+/
+174.254.36.211
+0 31 31 91369 4 1302021241
+/
+67.195.115.111
+0 8 6 20178 2 1301699624
+/
+67.186.229.133
+0 2 0 2016 0 0
+-
+207.46.199.20
+0 3 3 10435 1 1301630972
+/
+68.0.177.208
+0 18 18 79973 2 1301618779
+/
+68.56.91.49
+0 10 10 67959 1 1302002564
+/
+216.220.47.73
+0 43 33 343623 1 1301919781
+/
+66.75.0.86
+0 17 17 80149 1 1301919410
+/
+71.48.246.220
+0 23 23 152434 2 1302079462
+/
+90.200.3.185
+0 235 234 840355 5 1302018690
+/
+207.46.199.42
+0 2 1 4573 1 1301689154
+/
+81.97.45.35
+0 2 0 1260 1 1302003338
+/
+164.119.85.211
+0 17 17 80953 1 1302087152
+/
+149.32.224.35
+0 34 34 211733 1 1302106477
+/
+71.28.49.53
+0 1 1 4301 1 1301775363
+/
+169.152.251.99
+0 30 30 150490 1 1301916427
+/
+67.195.115.151
+0 9 7 28815 4 1301991490
+/
+69.104.67.37
+0 601 590 598110 12 1302017834
+/
+64.255.164.13
+0 17 16 75430 1 1301853416
+/xd_receiver.htm
+99.198.108.242
+0 24 13 111065 1 1302029515
+-
+74.250.164.231
+0 1 1 752 1 1301661160
+/
+66.220.153.246
+0 1 1 14204 1 1301746529
+/
+209.131.38.70
+0 1 1 731 1 1301653293
+/
+216.53.244.85
+0 41 41 87993 5 1301671697
+/
+119.63.192.139
+0 3 3 9134 2 1301969905
+/
+69.47.19.168
+0 17 17 76991 2 1302101451
+/xd_receiver.htm
+119.63.192.140
+0 4 4 12184 2 1301969844
+/
+119.63.192.141
+0 3 3 9168 2 1302103950
+/
+119.63.192.142
+0 3 3 9122 2 1301968461
+/
+119.63.192.143
+0 3 3 6839 2 1301970085
+/
+209.131.38.88
+0 1 1 735 1 1301850136
+/
+209.131.38.89
+0 2 2 1470 2 1301850136
+/
+98.160.125.204
+0 28 28 152034 1 1301944784
+/
+166.205.142.91
+0 36 36 146807 1 1302110666
+/
+69.28.58.16
+0 3 2 20415 1 1302066933
+/
+173.127.200.115
+0 15 15 79041 2 1301872764
+/
+207.46.204.178
+0 2 1 5032 1 1301802599
+/
+99.179.95.59
+0 17 17 215229 2 1301782548
+/
+67.195.111.26
+0 3 2 9179 1 1301855948
+/
+69.28.58.25
+0 6 3 25488 2 1301690859
+/
+69.28.58.28
+0 2 1 14714 1 1301678380
+/
+173.136.206.192
+0 16 16 79323 1 1301918235
+/
+207.46.204.180
+0 2 1 5836 1 1301678670
+/
+207.46.204.184
+0 2 1 5836 1 1301781846
+/
+166.137.11.147
+0 18 18 77467 1 1301653708
+/xd_receiver.htm
+67.195.111.47
+0 3 2 9135 1 1302101345
+/
+69.78.133.103
+0 7 7 30369 1 1302022406
+/
+72.14.199.197
+0 12 9 41779 6 1302056506
+/
+166.137.10.115
+0 19 19 78003 3 1302081076
+/xd_receiver.htm
+174.99.42.50
+0 4 4 10016 3 1301681512
+/
+74.82.64.144
+0 12 11 33728 1 1301676972
+/xd_receiver.htm
+66.169.253.186
+0 91 91 393108 3 1302041959
+/
+99.168.122.244
+0 17 17 80974 1 1302118089
+/
+96.243.24.178
+0 19 19 83874 3 1301755945
+/
+69.13.39.43
+0 3 3 21854 3 1301873540
+/
+69.165.115.131
+0 14 14 69945 1 1302103524
+/
+76.91.4.4
+0 17 17 80260 1 1302110588
+/
+123.125.71.103
+0 1 0 1008 0 0
+-
+123.125.71.104
+0 1 1 582 0 0
+-
+71.98.168.36
+0 34 34 156509 2 1301753248
+/
+202.160.179.126
+0 1 0 1008 0 0
+-
+74.82.64.160
+0 22 21 57548 1 1301676695
+/
+216.189.212.130
+0 17 17 79907 1 1302099614
+/
+98.238.145.211
+0 143 129 296996 15 1302023994
+/
+99.198.119.98
+0 48 26 222128 2 1301856452
+-
+75.214.61.3
+0 49 49 235699 2 1301929493
+/
+96.249.192.86
+0 40 10 17970 1 1301873552
+/
+166.137.9.149
+0 15 15 75463 1 1301917785
+/
+173.224.112.96
+0 7 5 68828 1 1302007118
+/
+70.96.73.146
+0 1 1 4313 1 1302002386
+/
+108.15.131.142
+0 10 10 41089 1 1302021153
+/
+157.55.17.105
+0 2 1 5835 1 1302012329
+/
+98.17.118.234
+0 1 1 751 1 1301848370
+/
+92.239.104.45
+0 1 0 1008 0 0
+-
+66.249.72.203
+0 7 3 14072 4 1302030906
+/
+66.249.72.205
+0 5 4 24526 3 1301801764
+/
+66.249.72.206
+0 2 1 4677 2 1301698951
+/
+66.249.72.207
+0 2 2 6291 1 1301704081
+/
+150.70.64.193
+0 5 5 34841 3 1301919897
+/
+207.46.12.237
+0 2 1 4879 1 1301734331
+/
+66.249.72.214
+0 1 1 713 0 0
+-
+66.249.72.216
+0 6 2 8697 1 1301869100
+/
+66.249.72.217
+0 2 1 4024 1 1301863761
+/
+66.249.72.218
+0 2 1 2172 2 1301794310
+/
+66.249.72.219
+0 2 1 1590 0 0
+-
+96.50.38.205
+0 2 1 1651 1 1301689397
+/
+68.200.9.144
+0 27 27 85544 3 1301771119
+/
+68.28.243.112
+0 15 13 148613 1 1302101799
+/
+66.249.72.226
+0 1 0 1008 0 0
+-
+66.249.72.227
+0 1 0 593 1 1301692013
+-
+173.77.132.56
+0 15 15 75303 1 1302004194
+/
+70.119.21.73
+0 35 26 91895 2 1301758995
+/
+66.249.72.232
+0 1 0 1008 0 0
+-
+66.249.72.233
+0 3 3 5110 2 1301702221
+/
+66.249.72.234
+0 1 0 1008 0 0
+-
+66.249.72.235
+0 3 2 2387 1 1301658482
+/
+66.249.72.239
+0 8 4 24331 3 1302112914
+-
+71.219.118.32
+0 12 0 18288 0 0
+-
+67.195.110.150
+0 4 3 10859 1 1301849432
+/
+66.249.72.240
+0 1 1 3025 1 1301817193
+/
+66.249.72.241
+0 3 2 6326 1 1301869461
+/
+66.249.72.242
+0 3 2 9123 2 1301843948
+/
+66.249.72.243
+0 2 0 1601 1 1301727729
+-
+66.249.72.244
+0 2 1 14594 0 0
+-
+66.249.72.245
+0 2 0 1601 1 1301772051
+-
+108.1.236.105
+0 30 25 126339 2 1302105781
+/
+174.252.184.149
+0 16 16 81593 1 1301698230
+/xd_receiver.htm
+66.249.72.250
+0 5 3 12875 3 1302113727
+/
+67.195.110.162
+0 3 2 8731 1 1301655804
+/
+166.137.8.175
+0 17 17 76561 1 1301905271
+/xd_receiver.htm
+166.205.138.25
+0 31 31 131785 3 1301935012
+/
+174.127.132.10
+0 1 1 13193 1 1302067629
+/
+24.45.223.95
+0 36 36 151772 2 1301738517
+/
+207.190.0.11
+0 13 12 77264 1 1302022581
+/xd_receiver.htm
+174.62.148.4
+0 36 36 151926 2 1301936211
+/
+210.232.15.31
+0 1 1 4310 1 1302042669
+/
+124.115.6.17
+0 2 0 2016 0 0
+-
+199.80.52.5
+0 1 1 7277 1 1301988518
+/
+124.115.0.139
+0 6 6 25241 3 1302065128
+/
+207.46.13.90
+0 2 1 5786 1 1301874914
+/
+98.85.46.107
+0 17 17 79754 1 1301833492
+/
+166.216.162.32
+0 36 36 532573 2 1301684349
+/
+124.115.0.140
+0 9 9 35089 4 1302000647
+/
+71.131.198.125
+0 128 128 582758 4 1302113830
+/
+166.205.139.203
+0 39 30 115055 3 1301928859
+/
+77.88.25.27
+0 57 30 134154 21 1302110605
+/
+67.195.115.82
+0 9 6 27762 3 1301938910
+/
+72.204.70.93
+0 18 18 84796 1 1302065213
+/
+173.71.214.201
+0 86 64 186839 7 1302116899
+/
+174.126.73.109
+0 17 17 80415 1 1301925528
+/
+157.55.112.214
+0 5 5 57988 1 1301804216
+/client/44B46A12F674B52697536B79721E650F.cache.html
+70.126.116.195
+0 114 112 532332 7 1301655999
+/
+174.129.117.237
+0 2 2 1304 2 1301993909
+/
+208.80.194.28
+0 1 1 13192 1 1302022275
+/
+208.80.194.29
+0 3 3 14866 2 1302108546
+/
+95.108.150.235
+0 18 12 60834 3 1301997726
+/
+174.127.132.64
+0 2 1 1861 1 1302079429
+/
+124.115.0.170
+0 8 8 25821 5 1302029375
+/
+150.70.97.36
+0 4 4 149831 1 1301623877
+/
+208.80.194.35
+0 2 2 20246 2 1302055889
+/
+208.80.194.37
+0 2 2 14215 2 1302108527
+/
+173.191.46.124
+0 35 35 84345 4 1301762704
+/
+174.102.152.21
+0 51 50 101299 3 1301885824
+/
+98.119.35.198
+0 39 12 26642 2 1301679878
+/
+66.220.155.123
+0 1 0 1524 0 0
+-
+66.249.68.176
+0 1 1 2984 1 1301785982
+/
+174.254.48.43
+0 37 37 170546 5 1301862292
+/
+97.126.163.229
+0 16 16 80050 1 1301691768
+/
+98.89.174.51
+0 70 70 337206 2 1302074749
+/
+207.46.199.200
+0 1 0 1524 0 0
+-
+150.70.75.35
+0 7 7 477210 3 1301920023
+/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+166.205.143.167
+0 35 23 108652 2 1302104949
+/xd_receiver.htm
+70.127.54.19
+0 20 20 87702 1 1301704243
+/
+74.95.39.17
+0 17 17 80183 2 1301679865
+/
+207.46.199.217
+0 3 2 4628 1 1301660855
+/
+67.195.115.254
+0 3 2 8736 1 1301917112
+/
+67.195.114.214
+0 3 2 8752 1 1301927190
+/
+123.125.71.70
+0 4 4 12203 2 1301928735
+/
+123.125.71.71
+0 5 5 10757 3 1302002910
+/
+123.125.71.72
+0 2 2 6093 2 1302107624
+/
+123.125.71.73
+0 2 2 7359 1 1301765682
+/
+123.125.71.74
+0 1 1 3050 1 1301765677
+/
+123.125.71.75
+0 3 3 9198 2 1301765625
+/
+123.125.71.76
+0 3 3 9125 3 1302015416
+/
+123.125.71.77
+0 2 2 6487 2 1301946773
+/
+123.125.71.78
+0 1 1 3067 1 1301765523
+/
+123.125.71.79
+0 4 4 13479 3 1301772369
+/
+98.217.161.244
+0 99 92 313482 6 1301952909
+/
+67.195.114.226
+0 3 2 9215 1 1301862822
+/
+193.47.80.44
+0 9 5 21049 3 1301634626
+/
+76.2.116.4
+0 1 1 750 1 1301666891
+/
+123.125.71.80
+0 2 2 8323 2 1302116285
+/
+123.125.71.81
+0 2 2 6111 2 1301919567
+/
+123.125.71.82
+0 1 1 3047 1 1301765543
+/
+123.125.71.83
+0 4 4 13964 3 1301937674
+/
+123.125.71.84
+0 2 2 6083 2 1301765656
+/
+123.125.71.85
+0 2 2 7356 2 1302107640
+/
+207.46.199.231
+0 3 2 17642 1 1301874459
+/
+123.125.71.86
+0 2 2 6095 2 1301765562
+/
+123.125.71.87
+0 3 3 9587 3 1301893552
+/
+123.125.71.88
+0 2 2 6102 2 1302051665
+/
+123.125.71.89
+0 3 3 11657 3 1302015430
+/
+174.254.137.149
+0 17 17 79907 1 1301673578
+/
+166.205.137.202
+0 76 61 246201 4 1301774087
+/xd_receiver.htm
+166.205.138.246
+0 5 5 4276 3 1301620441
+/
+123.125.71.90
+0 3 3 10416 2 1301893571
+/
+123.125.71.91
+0 2 2 6089 2 1301765526
+/
+123.125.71.92
+0 2 2 6147 1 1301765608
+/
+72.130.173.150
+0 60 60 248493 4 1301913821
+/
+204.46.249.248
+0 355 320 1379731 9 1302000684
+/
+72.53.194.237
+0 9 9 36665 1 1302005744
+/
+67.55.128.56
+0 4 4 20178 1 1302011016
+/xd_receiver.htm
+174.252.129.137
+0 41 40 90674 4 1302117422
+/xd_receiver.htm
+69.147.115.59
+0 1 1 689 1 1301962453
+/
+124.115.4.204
+0 6 6 20752 4 1302092812
+/
+66.249.72.13
+0 2 2 7398 2 1301790081
+/
+119.63.192.232
+0 4 4 12387 3 1302062956
+/
+67.195.113.219
+0 6 4 17887 2 1301973970
+/
+119.63.192.233
+0 1 1 3030 1 1301967019
+/
+119.63.192.234
+0 6 6 19939 4 1302104190
+/
+66.249.72.16
+0 1 1 3046 1 1301762926
+/
+119.63.192.235
+0 2 2 6078 2 1301969965
+/
+211.28.53.206
+0 258 254 1010797 5 1301814450
+/
+119.63.192.236
+0 2 2 6129 1 1301970265
+/
+66.249.72.19
+0 1 0 1008 0 0
+-
+69.147.115.61
+0 1 1 689 1 1301747746
+/
+166.137.11.208
+0 18 18 77195 1 1302105543
+/xd_receiver.htm
+24.11.242.57
+0 1 1 750 1 1301663858
+/
+66.249.72.20
+0 1 0 680 1 1301796751
+/
+66.249.72.26
+0 1 1 1709 0 0
+-
+66.249.72.27
+0 2 1 4992 1 1301699899
+/
+216.104.15.130
+0 1 1 1917 1 1301919899
+/
+119.63.192.247
+0 5 5 17410 3 1302104069
+/
+69.147.115.73
+0 3 3 11575 2 1301824197
+/
+216.104.15.138
+0 1 1 7043 1 1301919872
+/
+67.188.113.124
+0 17 17 80498 1 1301706850
+/
+67.195.113.239
+0 3 2 8733 1 1302062163
+/
+66.249.72.34
+0 1 1 3036 1 1301792562
+/
+66.249.72.35
+0 2 1 1723 1 1301796763
+/
+66.249.72.36
+0 1 1 3050 1 1301764146
+/
+66.249.72.38
+0 8 3 13326 3 1302000531
+/
+72.204.88.227
+0 17 16 79035 1 1302117281
+/
+66.249.72.39
+0 4 2 10140 2 1302051259
+/
+67.195.113.241
+0 6 4 18548 2 1302020547
+/
+66.249.72.40
+0 2 1 4936 1 1301720622
+/
+66.249.72.41
+0 1 1 4321 1 1301772747
+/
+98.211.13.133
+0 1 1 642 1 1301968192
+/
+66.249.72.47
+0 2 1 14594 0 0
+-
+150.70.172.101
+0 10 8 80297 3 1301919973
+/
+108.13.86.204
+0 118 77 472489 12 1301851148
+/
+173.54.210.152
+0 37 36 148221 4 1302107250
+/
+66.249.72.51
+0 1 1 3041 1 1301796337
+/
+66.249.72.52
+0 1 1 4123 1 1301787901
+/
+66.249.72.53
+0 2 1 1590 0 0
+-
+66.249.72.56
+0 2 1 5066 1 1301869147
+/
+66.249.72.57
+0 2 2 4058 2 1301814426
+/
+209.131.39.61
+0 2 2 10932 1 1301853364
+/
+66.249.72.58
+0 2 1 4180 2 1301894983
+/
+66.249.72.59
+0 6 4 19726 2 1301928835
+/
+87.106.135.77
+0 1 1 13140 1 1301806301
+/
+166.205.136.239
+0 15 15 76084 1 1301761436
+/
+66.249.72.65
+0 2 2 2687 1 1301726243
+/
+66.249.72.66
+0 13 10 40212 5 1302094600
+/
+66.249.72.67
+0 1 0 1008 0 0
+-
+66.220.149.247
+0 1 1 4308 1 1302103774
+/
+66.206.237.173
+0 17 17 79283 1 1301863572
+/
+66.249.72.69
+0 15 13 64717 2 1302105777
+/
+66.249.72.1
+0 2 1 1660 0 0
+-
+66.249.72.2
+0 1 1 1864 1 1301796764
+/
+66.249.72.3
+0 1 1 3418 1 1301704459
+/
+208.47.214.104
+0 2214 2207 1666325 1 1302119842
+/
+66.249.72.4
+0 1 1 390 1 1301658650
+/
+66.249.72.6
+0 1 0 1008 0 0
+-
+66.249.72.7
+0 7 4 13758 3 1302030875
+/
+66.249.72.8
+0 1 0 1008 0 0
+-
+56.0.143.24
+0 264 236 389031 31 1302119809
+/
+66.249.72.78
+0 3 1 3310 1 1301839048
+-
+66.249.72.79
+0 1 1 4217 1 1301698222
+/
+95.27.255.10
+0 6 6 107743 1 1301962164
+/client/B00C2E3DB97275D04EE591B145F764DF.cache.html
+72.45.222.122
+0 49 44 160943 2 1301919325
+/
+166.205.136.250
+0 10 10 6591 2 1302043000
+/xd_receiver.htm
+65.52.110.14
+0 2 1 5834 1 1302114638
+/
+99.198.110.250
+0 72 39 333195 3 1302115617
+-
+68.171.231.80
+0 52 52 189091 5 1301853613
+/
+66.249.72.80
+0 1 0 1008 0 0
+-
+66.249.72.82
+0 6 4 13708 4 1302083696
+/
+98.167.141.214
+0 16 16 79276 1 1302047148
+/
+66.249.72.87
+0 3 2 7947 2 1301787905
+/
+66.90.33.134
+0 14 14 78620 1 1301698474
+/
+66.249.72.88
+0 2 1 14594 0 0
+-
+76.217.166.125
+0 17 17 80528 1 1302095287
+/
+174.127.132.130
+0 1 0 1008 1 1302079340
+/
+67.195.37.114
+0 3 2 8722 1 1301778771
+/
+174.127.132.131
+0 5 5 13544 1 1302077199
+/
+174.127.132.132
+0 2 2 7551 1 1302077709
+/
+174.127.132.135
+0 3 3 6919 1 1302077633
+/
+207.30.52.2
+0 6 6 19259 1 1302027726
+/
+157.55.116.56
+0 4 3 11990 1 1301657780
+/
+67.195.112.29
+0 3 2 8738 1 1301825819
+/
+174.121.75.26
+0 2 1 4053 1 1301646995
+/
+69.147.114.105
+0 1 1 690 1 1301689737
+/
+69.147.114.106
+0 1 1 690 1 1301824167
+/
+207.31.210.15
+0 1 1 7109 1 1302095762
+/
+65.52.110.37
+0 2 1 5834 1 1301877673
+/
+76.94.22.89
+0 407 402 394764 4 1301880518
+/
+205.204.30.130
+0 23 23 84023 1 1301729085
+/
+94.2.29.58
+0 15 15 76340 1 1301814434
+/
+65.52.110.40
+0 2 1 4560 1 1301664067
+/
+173.171.119.129
+0 20 20 81057 1 1301849957
+/
+65.52.110.44
+0 2 1 4587 1 1301981345
+/
+72.14.194.18
+0 16 16 77964 1 1302021691
+/xd_receiver.htm
+76.90.25.89
+0 73 65 280098 2 1301940473
+/
+65.52.110.49
+0 2 1 4596 1 1301869754
+/
+67.195.111.234
+0 3 2 8733 1 1301620239
+/
+12.162.207.2
+0 66 66 112628 10 1302057591
+/xd_receiver.htm
+207.46.195.200
+0 9 9 59383 1 1301801090
+/
+76.87.23.185
+0 16 16 79940 1 1302013291
+/
+67.195.112.50
+0 8 6 20643 2 1301824197
+/
+75.9.64.118
+0 30 30 150338 1 1301817194
+/
+74.82.64.16
+0 2 2 18885 1 1301933733
+/
+184.46.13.224
+0 25 25 81684 1 1302112383
+/
+74.82.64.17
+0 17 9 93566 2 1301944919
+/
+74.82.64.18
+0 15 11 116125 1 1301743843
+/
+207.46.12.28
+0 3 3 10901 1 1302037680
+/
+207.46.195.213
+0 2 2 7717 1 1301626633
+/
+65.52.110.64
+0 2 1 5841 1 1301956142
+/
+97.217.197.46
+0 16 8 9805 3 1301687200
+/
+207.46.13.131
+0 2 1 4942 1 1301618160
+/
+65.52.110.72
+0 2 1 4846 1 1302029461
+/
+207.46.195.226
+0 4 2 10919 2 1301949538
+/
+70.127.14.34
+0 29 29 85255 1 1301827185
+/
+207.46.13.138
+0 2 1 5835 1 1301738800
+/
+166.137.8.235
+0 17 17 76563 2 1301666211
+/xd_receiver.htm
+74.82.64.33
+0 6 5 64155 1 1301918774
+/
+74.82.64.34
+0 2 2 5672 0 0
+-
+67.190.212.55
+0 17 17 81063 1 1301863761
+/
+95.108.142.138
+0 6 4 20278 1 1301923354
+/
+202.160.189.231
+0 1 1 4314 1 1301839535
+/
+207.46.195.230
+0 2 1 5843 1 1301694850
+/
+207.46.13.147
+0 2 1 5835 1 1301828641
+/
+173.164.92.237
+0 1 1 1371 0 0
+-
+65.52.110.89
+0 2 1 5536 1 1301622149
+/
+75.4.249.163
+0 31 31 149387 1 1301772589
+/
+211.123.206.78
+0 1 1 4304 1 1302005256
+/
+67.195.114.29
+0 3 2 9589 1 1301991835
+/
+107.24.178.38
+0 16 16 79836 3 1301789307
+/
+67.195.112.96
+0 3 2 9544 1 1301726500
+/
+72.102.212.109
+0 18 18 77441 1 1301798148
+/
+207.46.12.68
+0 12 12 61209 2 1301932867
+/
+96.47.145.58
+0 17 17 80052 2 1302102923
+/
+119.63.196.106
+0 2 0 2016 0 0
+-
+207.46.12.123
+0 2 2 7716 1 1301676629
+/
+66.249.72.101
+0 5 4 12897 2 1301919774
+/
+66.249.72.106
+0 1 1 3711 1 1301795820
+/
+66.249.72.107
+0 1 0 1008 0 0
+-
+66.249.72.108
+0 3 1 5659 2 1302074365
+/
+66.249.72.109
+0 4 2 8957 2 1301796316
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+66.249.72.113
+0 2 1 4011 1 1302113674
+/
+66.249.72.118
+0 2 1 4002 1 1302065211
+/
+119.63.196.122
+0 1 0 1008 0 0
+-
+69.168.201.42
+0 151 151 747976 4 1302108246
+/
+66.249.72.137
+0 1 0 593 1 1302078881
+-
+65.13.100.41
+0 17 17 82099 2 1302086405
+/
+66.249.72.151
+0 3 3 14782 0 0
+-
+166.205.9.207
+0 1 0 1008 1 1302106798
+-
+56.0.103.25
+0 27 27 18847 7 1302050828
+/
+66.249.72.171
+0 2 1 4643 1 1302051283
+/
+173.253.147.158
+0 62 53 106970 4 1302094389
+/
+66.249.72.180
+0 1 0 1008 0 0
+-
+99.231.181.30
+0 16 16 77536 1 1302113178
+/
+71.48.246.220
+0 23 23 152434 2 1302079462
+/
+164.119.85.211
+0 17 17 80953 1 1302087152
+/
+149.32.224.35
+0 34 34 211733 1 1302106477
+/
+69.47.19.168
+0 17 17 76991 2 1302101451
+/xd_receiver.htm
+119.63.192.141
+0 2 2 6105 1 1302103950
+/
+119.63.192.143
+0 1 1 755 0 0
+-
+166.205.142.91
+0 36 36 146807 1 1302110666
+/
+69.28.58.16
+0 3 2 20415 1 1302066933
+/
+67.195.111.47
+0 3 2 9135 1 1302101345
+/
+72.14.199.197
+0 2 2 8612 1 1302056506
+/
+166.137.10.115
+0 19 19 78003 3 1302081076
+/xd_receiver.htm
+99.168.122.244
+0 17 17 80974 1 1302118089
+/
+69.165.115.131
+0 14 14 69945 1 1302103524
+/
+76.91.4.4
+0 17 17 80260 1 1302110588
+/
+216.189.212.130
+0 17 17 79907 1 1302099614
+/
+68.28.243.112
+0 15 13 148613 1 1302101799
+/
+66.249.72.239
+0 4 1 6092 2 1302112914
+-
+108.1.236.105
+0 30 25 126339 2 1302105781
+/
+66.249.72.250
+0 2 1 4009 1 1302113727
+/
+174.127.132.10
+0 1 1 13193 1 1302067629
+/
+124.115.0.139
+0 2 2 9093 1 1302065128
+/
+71.131.198.125
+0 128 128 582758 4 1302113830
+/
+77.88.25.27
+0 8 7 22873 5 1302110605
+/
+72.204.70.93
+0 18 18 84796 1 1302065213
+/
+173.71.214.201
+0 14 8 7212 1 1302116899
+/
+208.80.194.29
+0 3 3 14866 2 1302108546
+/
+174.127.132.64
+0 2 1 1861 1 1302079429
+/
+208.80.194.35
+0 1 1 7102 1 1302055889
+/
+208.80.194.37
+0 2 2 14215 2 1302108527
+/
+66.220.155.123
+0 1 0 1524 0 0
+-
+98.89.174.51
+0 16 16 77503 1 1302074749
+/
+166.205.143.167
+0 35 23 108652 2 1302104949
+/xd_receiver.htm
+123.125.71.72
+0 1 1 3040 1 1302107624
+/
+123.125.71.80
+0 1 1 4014 1 1302116285
+/
+123.125.71.85
+0 1 1 4309 1 1302107640
+/
+123.125.71.88
+0 1 1 3047 1 1302051665
+/
+174.252.129.137
+0 41 40 90674 4 1302117422
+/xd_receiver.htm
+124.115.4.204
+0 2 2 7055 1 1302092812
+/
+119.63.192.232
+0 1 1 3245 1 1302062956
+/
+119.63.192.234
+0 1 1 3411 1 1302104190
+/
+166.137.11.208
+0 18 18 77195 1 1302105543
+/xd_receiver.htm
+119.63.192.247
+0 3 3 11327 1 1302104069
+/
+67.195.113.239
+0 3 2 8733 1 1302062163
+/
+72.204.88.227
+0 17 16 79035 1 1302117281
+/
+66.249.72.39
+0 2 1 4803 1 1302051259
+/
+173.54.210.152
+0 37 36 148221 4 1302107250
+/
+66.249.72.59
+0 2 1 14594 0 0
+-
+66.249.72.66
+0 6 5 24656 1 1302094600
+/
+66.249.72.69
+0 2 1 3991 1 1302105777
+/
+66.220.149.247
+0 1 1 4308 1 1302103774
+/
+208.47.214.104
+0 318 318 239850 1 1302119842
+/
+56.0.143.24
+0 101 78 72942 11 1302119809
+/
+99.198.110.250
+0 24 13 111065 1 1302115617
+-
+65.52.110.14
+0 2 1 5834 1 1302114638
+/
+66.249.72.82
+0 2 1 4481 1 1302083696
+/
+66.249.72.88
+0 2 1 14594 0 0
+-
+76.217.166.125
+0 17 17 80528 1 1302095287
+/
+174.127.132.130
+0 1 0 1008 1 1302079340
+/
+174.127.132.131
+0 5 5 13544 1 1302077199
+/
+174.127.132.132
+0 2 2 7551 1 1302077709
+/
+174.127.132.135
+0 3 3 6919 1 1302077633
+/
+207.31.210.15
+0 1 1 7109 1 1302095762
+/
+12.162.207.2
+0 15 15 9604 2 1302057591
+/xd_receiver.htm
+184.46.13.224
+0 25 25 81684 1 1302112383
+/
+96.47.145.58
+0 17 17 80052 2 1302102923
+/
+66.249.72.108
+0 1 1 4297 1 1302074365
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://disneyland-park.coasterq.com/
+1 10
+- (Direct Request)
+0 3322
+http://seaworld-orlando.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 12
+http://islands-of-adventure.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 23
+http://www.google.com/m
+1 9
+http://cedar-point.coasterq.com/index.php/main/enterridetime
+1 28
+http://www.google.co.uk/search
+1 2
+find1friend.com/search
+0 3
+http://canadas-wonderland.coasterq.com/index.php/main/enterridetime
+1 4
+http://universal-studios-florida.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 51
+http://www.coasterq.com/images/connect_sprite.png
+1 5
+http://california-adventure.coasterq.com/index.php/main/myq
+1 1
+http://coasterq.com/
+1 190
+http://discovery-kingdom.coasterq.com/index.php/main/myq
+1 1
+http://universal-studios-florida.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 69
+http://knotts-berry-farm.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 36
+http://hersheypark.coasterq.com/index.php/main/rides
+1 1
+http://california-adventure.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 83
+http://legoland-california.coasterq.com/index.php/main/rides
+1 1
+http://islands-of-adventure.coasterq.com/
+1 113
+http://california-adventure.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 204
+http://busch-gardens-tampa.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 36
+http://over-georgia.coasterq.com/client/ECA9C8AD56A2AA3F402A7DA8D89E127D.cache.html
+1 6
+http://www.google.co.uk/url
+1 1
+http://animal-kingdom.coasterq.com/
+1 31
+http://universal-studios-florida.coasterq.com/index.php/main/rides
+1 65
+http://moneyreport.coasterq.com/
+1 51
+http://www.google.com/search
+1 47
+http://canadas-wonderland.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 15
+http://hollywood-studios.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 18
+http://answers.yahoo.com/question/index
+1 1
+http://knotts-berry-farm.coasterq.com/index.php/main/enterridetime
+1 1
+http://islands-of-adventure.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 6
+http://knotts-berry-farm.coasterq.com/
+1 58
+http://magic-kingdom.coasterq.com/
+1 98
+http://moneyreport.coasterq.com/client/0D92B99597E6E63EF1C08107E374020C.cache.html
+1 19
+http://travel.latimes.com/daily-deal-blog/index.php/disney-cell-phone-3255/
+0 2
+http://disneyland.coasterq.com/index.php/main/rides
+1 3
+http://disneyland.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 36
+http://m.yahoo.com/w/search
+1 1
+http://legoland-california.coasterq.com/
+1 93
+http://hersheypark.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://tokyo-disneyland.coasterq.com/
+1 4
+Google
+2 129
+http://www.coasterq.com/xd_receiver.htm
+1 4
+http://thorpe-park.coasterq.com/index.php/main/rides
+1 1
+http://coasterq.com/client/8BD64DB060AB4E8CEF4AD2E7B4F6D48D.cache.html
+1 3
+http://seaworld-san-antonio.coasterq.com/index.php/main/enterridetime
+1 1
+http://discovery-kingdom.coasterq.com/
+1 9
+http://animal-kingdom.coasterq.com/index.php/main/enterridetime
+1 1
+http://www.examiner.com/walt-disney-world-travel-in-orlando/get-wait-times-for-attractions-on-your-phone
+0 1
+http://www.bing.com/search
+0 10
+http://st-louis.coasterq.com/index.php/main/enterridetime
+1 1
+http://over-georgia.coasterq.com/index.php/main/enterridetime
+1 1
+http://magic-mountain.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 67
+http://www.facebook.com/extern/login_status.php
+0 239
+http://magic-kingdom.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 12
+http://yandex.ru/yandsearch
+0 1
+http://magic-mountain.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 60
+http://cedar-point.coasterq.com/
+1 17
+http://www.coasterq.com/client/8BD64DB060AB4E8CEF4AD2E7B4F6D48D.cache.html
+1 21
+http://coasterq.com/client/4DE0F78CE3FBACD0E745368314F44DA3.cache.html
+1 9
+http://magic-kingdom.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 18
+http://epcot.coasterq.com/
+1 47
+http://coasterq.com/client/B00C2E3DB97275D04EE591B145F764DF.cache.html
+1 18
+http://universal-studios-hollywood.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 4
+http://disneyland.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 609
+http://universal-studios-florida.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://hersheypark.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 6
+http://cedar-point.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 18
+http://magic-kingdom.coasterq.com/index.php/main/rides
+1 6
+http://www.google.com
+1 30
+http://knotts-berry-farm.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://animal-kingdom.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 6
+http://california-adventure.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 12
+http://legoland-california.coasterq.com/index.php/main/myq
+1 1
+http://www.coasterq.com/client/4DE0F78CE3FBACD0E745368314F44DA3.cache.html
+1 89
+http://epcot.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 24
+http://www.coasterq.com/client/B00C2E3DB97275D04EE591B145F764DF.cache.html
+1 6
+http://legoland-california.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 133
+http://www.google.com/url
+1 13
+http://epcot.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 18
+Yahoo!
+2 14
+http://www.facebook.com/l.php
+0 1
+http://disneyland.coasterq.com/
+1 186
+http://seaworld-orlando.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 99
+http://great-adventure.coasterq.com/index.php/main/rides
+1 8
+http://api.connect.facebook.com/static/v0.4/client_restserver.php
+0 87
+http://seaworld-orlando.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 38
+http://universal-studios-florida.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 25
+http://california-adventure.coasterq.com/
+1 81
+http://orlando.answermomma.com/things-to-do/are-the-crowds-still-horrible-at-universal-orlando/
+0 1
+http://california-adventure.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 6
+http://www.coasterq.com/index.php/main/faqs
+1 2
+http://api.facebook.com/static/v0.4/client_restserver.php
+0 5
+http://six-flags-america.coasterq.com/index.php/main/rides
+1 1
+http://walt-disney-studios-park.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 9
+http://legoland-california.coasterq.com/index.php/main/enterridetime
+1 7
+http://six-flags-america.coasterq.com/index.php/main/enterridetime
+1 1
+http://great-adventure.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 6
+http://m.bing.com/search/
+0 2
+http://tokyo-disneysea.coasterq.com/
+1 1
+http://busch-gardens-tampa.coasterq.com/index.php/main/enterridetime
+1 9
+http://busch-gardens-tampa.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 71
+http://canadas-wonderland.coasterq.com/
+1 19
+http://www.coasterq.com/index.php/main/termsofuse
+1 5
+http://busch-gardens-tampa.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 6
+http://over-georgia.coasterq.com/index.php/main/myq
+1 1
+http://hollywood-studios.coasterq.com/
+1 40
+http://coasterq.com/client/F48C09AF880DDE0AC54A92822F1BABE5.cache.html
+1 24
+http://www.google.com.au/url
+1 1
+http://magic-mountain.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://canadas-wonderland.coasterq.com/index.php/main/rides
+1 1
+http://search.yahoo.com/search
+1 12
+http://islands-of-adventure.coasterq.com/index.php/main/myq
+1 1
+http://www.google.ca/url
+1 5
+http://magic-kingdom.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 18
+http://tokyo-disneyland.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 3
+http://www.coasterq.com/
+1 304
+http://islands-of-adventure.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 42
+http://hollywood-studios.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 12
+http://www.coasterq.com/robots.txt
+1 1
+http://islands-of-adventure.coasterq.com/index.php/main/rides
+1 82
+http://busch-gardens-tampa.coasterq.com/
+1 136
+http://islands-of-adventure.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 95
+http://st-louis.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://www.coasterq.com/client/F48C09AF880DDE0AC54A92822F1BABE5.cache.html
+1 18
+http://cedar-point.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 12
+http://st-louis.coasterq.com/
+1 9
+http://m.bing.com/Search/search.aspx
+0 1
+http://universal-studios-hollywood.coasterq.com/
+1 20
+http://epcot.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 9
+http://legoland-california.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 30
+http://over-georgia.coasterq.com/index.php/main/rides
+1 1
+http://disneyland-park.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 31
+http://walt-disney-studios-park.coasterq.com/index.php/main/rides
+1 1
+http://www.google.com/m/search
+1 11
+http://magic-mountain.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 409
+http://magic-kingdom.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 91
+http://canadas-wonderland.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 6
+http://universal-studios-hollywood.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 12
+http://coasterq.com/index.php/main/sitemap
+1 1
+http://seaworld-orlando.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 44
+http://www.coasterq.com/index.php/main/sitemap
+1 65
+http://www.google.com/
+1 6
+http://great-adventure.coasterq.com/
+1 11
+http://magic-mountain.coasterq.com/
+1 152
+http://seaworld-orlando.coasterq.com/
+1 135
+http://disneyland.coasterq.com/index.php/main/myq
+1 4
+http://cedar-point.coasterq.com/index.php/main/myq
+1 1
+http://knotts-berry-farm.coasterq.com/index.php/main/rides
+1 2
+http://www.coasterq.com/client/client.nocache.js
+1 1
+http://disneyland.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 45
+http://walt-disney-studios-park.coasterq.com/
+1 10
+http://www.google.ca/search
+1 4
+http://universal-studios-florida.coasterq.com/
+1 121
+http://hersheypark.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 12
+http://disneyland.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 321
+http://discovery-kingdom.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://hersheypark.coasterq.com/
+1 26
+http://epcot.coasterq.com/client/98686FCBD4E7097987D9C3ECBE4CA52B.cache.html
+1 12
+http://animal-kingdom.coasterq.com/client/0BC6A758C8819366E807576641858750.cache.html
+1 6
+http://great-adventure.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 6
+http://animal-kingdom.coasterq.com/client/44B46A12F674B52697536B79721E650F.cache.html
+1 6
+http://epcot.coasterq.com/index.php/main/rides
+1 24
+http://over-georgia.coasterq.com/
+1 8
+http://busch-gardens-tampa.coasterq.com/client/2DDB994942EE8A1515D91D380DC859D2.cache.html
+1 62
+# End Of Table - referrers
+# -agents- 
+YandexImages/3.0
+0 4
+YahooCacheSystem
+0 7
+BlackBerry8520/5.0.0.900 Profile/MIDP-2.1 Configuration/CLDC-
+0 7
+Mozilla/4.0 (compatible;)
+0 2
+Baiduspider+(+http://www.baidu.jp/spider/)
+0 36
+Yahoo! Slurp China
+0 2
+MSIE 7.0
+0 1592
+Googlebot-Image/1.0
+0 46
+Googlebot/2.1
+0 155
+MSIE 5.5
+0 1
+Baiduspider+(+http://www.baidu.com/search/spider.htm)
+0 62
+POLARIS/6.01 (BREW 3.1.5; U; en-us; LG; LX265; POLARIS/6.01/W
+0 15
+Netscape 6 compatible
+2 3568
+BlackBerry8330/4.3.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 
+0 10
+Mediapartners-Google
+0 62
+AdsBot-Google-Mobile (+http://www.google.com/mobile/adsbot.ht
+0 4
+BlackBerry9630/5.0.0.1030 Profile/MIDP-2.1 Configuration/CLDC
+0 8
+Googlebot-Mobile
+0 3
+msnbot-media/1.1 (+http://search.msn.com/msnbot.htm)
+0 6
+Mozilla/5.0
+0 3568
+msnbot/2.0b (+http://search.msn.com/msnbot.htm)._
+0 4
+Exabot/3.0
+0 9
+Opera/9.8
+0 21
+YandexBot/3.0
+0 81
+Opera
+2 21
+Facebook share follower
+0 1
+MSIE 8.0
+0 1018
+AdsBot-Google (+http://www.google.com/adsbot.html)
+0 8
+MSIE 6.0
+0 112
+Yahoo! Slurp/3.0
+0 6
+Baiduspider-image+(+http://www.baidu.com/search/spider.htm)
+0 1
+Google Desktop/5.9
+0 5
+bingbot/2.0
+0 43
+SiteLockSpider [en] (WinNT; I ;Nav)
+0 144
+Netscape 4 (or compatible)
+2 2
+BlackBerry8330m/4.5.0.186 Profile/MIDP-2.0 Configuration/CLDC
+0 16
+GoogleToolbar 6.6
+0 12
+GeoHasher/Nutch-1.0 (GeoHasher Web Search Engine; geohasher.g
+0 4
+Sosospider+(+http://help.soso.com/webspider.htm)
+0 31
+Wget/1.11.4 Red Hat modified
+0 1
+SAMSUNG-SGH-E250/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 
+0 2
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit
+0 1
+MJ12bot/v1.3
+0 4
+Purebot/1.1
+0 7
+Yahoo! Slurp
+0 92
+Teleca Q7
+0 7
+MSIE 9.0
+0 17
+BlackBerry9630/5.0.0.975 Profile/MIDP-2.1 Configuration/CLDC-
+0 59
+# End Of Table - agents
+# -search strings- 
+ride wait times legoland
+1
+universal studios current wait times
+1
+current waiting times busch gardens tampa
+1
+busch garden tampa wait times
+1
+six flags over georgia wait time applications
+1
+universal ride wait times
+3
+what are the typical wait times in for busch gardens
+2
+busch gardens wait time
+3
+magic mountain wait times
+1
+universal studio florida ride time waits
+2
+cedar point wait lines
+1
+average wait times at sea world in april
+1
+six flags magic mountain wait times
+3
+sea world wait times
+1
+wait times at hershey park
+1
+current disneyland wait times
+2
+cedar point wait times
+2
+wait times for sea world rides
+1
+legoland ride wait
+1
+ride wait times for magic mountain
+1
+what is the average wait for a ride at magic mountain
+1
+busch gardens wait times
+1
+hersheypark average wait times
+1
+current wait times busch gardens tampa
+1
+universal studios fl ride time
+1
+orlando see world wait time
+1
+coasterq
+1
+sea world ride wait times
+1
+universal studios wait times
+1
+six flags wait times
+2
+average wait time cedar point
+1
+knottsberry farm ride wait times
+2
+universal studio ride wait times
+2
+average wait times at cedar point
+4
+seaworld wait times
+2
+magic mountain ride wait times
+4
+legoland rides wait time
+1
+seaworld orlando wait times
+3
+line wait times at islands of adventure
+1
+how long are the wait lines at cedar point
+1
+coaster q
+1
+coasterq.xom
+1
+knotts berry farm wait times
+1
+wait times for disneyland rides
+1
+cedar point ride wait times
+1
+wait times universal studios florida
+1
+busch gardens tampa wait times
+4
+busch gardens tamp ride wait times
+3
+ride wait times seaworld
+1
+wait times for lines at knotts berry farm
+1
+busch garden wait times
+1
+knotts berry farm line waits
+3
+wait times for sea world
+1
+wait times for magic kingdom
+1
+epcot wait times
+1
+legoland wait times
+3
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

@@ -1,0 +1,59 @@
+<?php
+require_once('persistence/RideClosure.php');
+require_once('persistence/RideClosurePeer.php');
+
+class RideClosure_model extends Model 
+{
+
+	function RideClosure_model()
+	{
+		parent::Model();
+	}
+	
+	function getRideClosures()
+	{
+		$criteria = new Criteria();
+		
+		$criteria->addAscendingOrderByColumn(RideClosurePeer::START_DATE);
+		
+		$rideClosures = RideClosurePeer::doSelect($criteria);
+		
+		return $rideClosures;
+	}
+	
+	public function createNewRideClosure($startDate, $endDate, $rideId)
+	{
+		$newRideClosure = new RideClosure();
+		
+		$newRideClosure->setStartDate($startDate);
+		
+		$newRideClosure->setEndDate($endDate);
+		
+		$newRideClosure->setRideId($rideId);
+		
+		$newRideClosure->save();
+		
+		echo $newRideClosure->getId();
+	}
+	
+	public function deleteRideClosure($id)
+	{
+		$rideClosureToBeDeleted = RideClosurePeer::retrieveByPK($id);
+		
+		$rideClosureToBeDeleted->delete();
+	}
+	
+	public function updateRideClosure($id, $startDate, $endDate, $rideId)
+	{
+		$rideClosureToBeUpdated = RideClosurePeer::retrieveByPK($id);
+		
+		$rideClosureToBeUpdated->setStartDate($startDate);
+		
+		$rideClosureToBeUpdated->setEndDate($endDate);
+		
+		$rideClosureToBeUpdated->setRideId($rideId);
+		
+		$rideClosureToBeUpdated->save();
+	}
+}
+?>

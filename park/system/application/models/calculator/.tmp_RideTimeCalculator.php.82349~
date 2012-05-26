@@ -1,0 +1,110 @@
+<?php
+
+require_once('CurrentRideWaitCalculatorBuilder.php');
+
+class RideTimeCalculator
+{
+	// -------------------------------------------------------------------------
+	// Class Constant
+	// -------------------------------------------------------------------------
+	
+	const TIME_5_MIN = 300;
+		
+	// -------------------------------------------------------------------------
+	// Private Variables
+	// -------------------------------------------------------------------------
+	
+	private $currentRideWaitCalculator;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+
+	function __construct()
+	{	
+		$currentRideWaitCalculatorBuilder = 
+			new CurrentRideWaitCalculatorBuilder();
+			
+	  	$this->currentRideWaitCalculator = 
+	  		$currentRideWaitCalculatorBuilder->build();
+	}
+	
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+	
+	public function updateCalculatedData($ride)
+	{
+		if($this->isRideDataOutofDate($ride))
+		{
+			$this->updateTimes($ride);
+		}
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+	
+	private function updateTimes($ride)
+	{
+		$ride->setLastupdate(time());
+		
+		$ride->save();
+		
+		$this->updateCurrentWaitTime($ride);
+		
+		$this->updateAverageWaitTime($ride);
+		
+		$this->updateNextShortestWaitDateTime($ride);
+		
+		$this->updateNextShortestWaitTime($ride);
+			
+		$ride->save();
+	}
+	
+	private function updateAverageWaitTime($ride)
+	{
+		$ride->setAverageWaitTime(45);
+	}
+	
+	private function updateNextShortestWaitDateTime($ride)
+	{
+		$timestamp = time();
+		
+		$timeOfDay = mktime(12, 0, 0, date("m",$timestamp), 
+			date("d",$timestamp), date("y",$timestamp));
+			
+		$ride->setNextshortestdatetime($timeOfDay);
+	}
+	
+	private function updateCurrentWaitTime($ride)
+	{
+		$calculatedRideTime = 
+			$this->currentRideWaitCalculator->calculateCurrentWaitTime($ride);
+			
+		$ride->setCurrentwaittime($calculatedRideTime);
+	}
+	
+	private function updateNextShortestWaitTime($ride)
+	{
+		$ride->setNextshortestwaittime(30);
+	}
+	
+	private function isRideDataOutofDate($ride)
+	{
+		$timestamp = time();
+		
+		$lastUpdatedTime = $ride->getLastupdate();
+		
+		if($timestamp > 
+			(RideTimeCalculator::TIME_5_MIN + $lastUpdatedTime))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+?>

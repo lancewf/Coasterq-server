@@ -1,0 +1,79 @@
+<?php
+require_once('persistence/Ride.php');
+require_once('calculator/RideTimeCalculator.php');
+
+class Ride_model extends Model 
+{
+
+	function Ride_model()
+	{
+		parent::Model();
+	}
+	
+	function getRides()
+	{
+		$criteria = new Criteria();
+
+		$criteria->add(RidePeer::IS_RIDE_PERMENTLY_CLOSED, false);
+		
+		$criteria->addAscendingOrderByColumn(RidePeer::NAME);
+
+		$rides = RidePeer::doSelect($criteria);
+		
+		$rideTimeCalculator = new RideTimeCalculator(); 
+		
+		foreach($rides as $ride)
+		{
+			$rideTimeCalculator->updateCalculatedData($ride);
+		}
+		
+		return $rides;
+	}
+	
+	public function updateRideData($rideId, 
+		$popularityLevel, $closedPermanently)
+	{
+		$ride = RidePeer::retrieveByPK($rideId);
+		
+		$ride->setIsRidePermentlyClosed($closedPermanently);
+		
+		$ride->setPopularitylevel($popularityLevel);
+		
+		$ride->save();
+	}
+	
+	public function addRide($rideName, $land, $height, $hasFastpass, 
+		$hasSingleLine, $description, $popularityLevel = 5)
+	{
+		$newRide = new Ride();
+		
+		$newRide->setName($rideName);
+		
+		$newRide->setLand($land);
+		
+		$newRide->setHeight($height);
+		
+		$newRide->setFastpass($hasFastpass);
+		
+		$newRide->setSingleline($hasSingleLine);
+		
+		$newRide->setDescription($description);
+		
+		$newRide->setPopularitylevel($popularityLevel);
+		
+		$timestamp = time();
+		
+		$timeOfDay = mktime(12, 0, 0, date("m",$timestamp), 
+			date("d",$timestamp), date("y",$timestamp));
+			
+		$newRide->setNextshortestdatetime($timeOfDay);
+		
+		$newRide->save();
+	}
+	
+	public function clearAll()
+	{
+		RidePeer::doDeleteAll();
+	}
+}
+?>

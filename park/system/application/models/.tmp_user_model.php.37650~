@@ -1,0 +1,78 @@
+<?php
+class User_model extends Model 
+{
+	public function User_model()
+	{
+		parent::Model();
+		
+		require_once('persistence/GenericUser.php');
+		require_once('persistence/Itinerary.php');
+		
+		$this->load->helper('cookie');
+		$this->load->helper('guid');
+	}
+	
+	public function getUser()
+	{
+		$cookieId = getCookieId();
+		if($cookieId)
+		{
+      		$user = UserPeer::retrieveByPK($cookieId);
+
+      		return $user;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public function getOrCreateUser()
+	{
+		$cookieId = getCookieId();
+		if(!$cookieId)
+		{
+			$cookieId = generateGUID();
+			set_cookie(cookie_tag(), $cookieId, 60*60*24*364*2);
+			$user = $this->_createNewUser($cookieId);
+		}
+		else
+		{
+			$user = $this->getUser($cookieId);
+			if(!$user)
+			{
+				$user = $this->_createNewUser($cookieId);
+			}
+		}
+
+		return $user;
+	}
+	
+   public function clearAll()
+   {
+		UserPeer::doDeleteAll();
+   }
+   
+   	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+	
+   public function _createNewUser($cookieId)
+	{
+		$newUser = new GenericUser();	
+		
+		$newUser->setId($cookieId);
+		
+		$itinerary = new Itinerary();
+		
+		$itinerary->setUser($newUser);
+		$itinerary->setDate(Time());
+		
+		$itinerary->save();
+		
+		$newUser->save();
+		
+		return $newUser;
+	}
+}
+?>

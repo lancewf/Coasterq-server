@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+
+<database name="persistence" defaultIdMethod="native">
+
+    <table name="user"  description="a user to the system">
+        <column name="id" type="varchar" primaryKey="true" size="50" required="true" description="user Id and cookie"/>
+        <column name="class_key" type="INTEGER" inheritance="single">
+            <inheritance key="1" class="RegisterUser" extends="persistence.User" />
+            <inheritance key="2" class="GenericUser" extends="persistence.User" />
+        </column>
+        <column name="name" type="varchar" size="100" description="user name"/>
+        <column name="password" type="varchar" size="100" description="user password"/>
+        <column name="last_time_logged_in" type="timestamp" required="false" description="the last date and time the user logged in"/>
+    </table>
+    
+    <table name="itinerary" description="user's itinerary">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="itinerary Id"/>
+        <column name="user_id" type="varchar" size="50" required="true" description="user Id"/>
+        <column name="date" type="date" required="true" description="itinerary date"/>
+        <foreign-key foreignTable="user">
+            <reference local="user_id" foreign="id"/>
+        </foreign-key>
+    </table>
+    
+    <table name="itinerary_ride" description="A ride on a itinerary">
+        <column name="itinerary_id" type="integer" primaryKey="true" required="true" description="Foreign Key for itinerary"/>
+        <column name="ride_id" type="integer" primaryKey="true" required="true" description="Foreign Key for ride"/> 
+        <column name="priority" type="integer"  required="true" description="priority for the ride"/>
+        <foreign-key foreignTable="itinerary">
+            <reference local="itinerary_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="ride">
+            <reference local="ride_id" foreign="id"/>
+        </foreign-key>
+    </table>
+    
+    <table name="ride_wait" description="A wait time on a ride">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="itinerary Id"/>
+        <column name="ride_id" type="integer" required="true" description="Foreign Key for ride"/>
+        <column name="user_id" type="varchar" size="50" required="true" description="user Id"/>
+        <column name="date_time_in_line" type="timestamp" required="true" description="date time in line"/>
+        <column name="wait_time" type="integer" required="true" description="time in line"/>
+        <column name="latitude" type="double" required="false" description="the latitude of the user when the time was entered"/>
+        <column name="longitude" type="double" required="false" description="the longitude of the user when the time was entered"/>
+        <column name="inside_park" type="boolean" required="true" description="entry was inside park"/> 
+        <foreign-key foreignTable="user">
+            <reference local="user_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="ride">
+            <reference local="ride_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="land" description="a land in the park">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="Land Id"/>
+        <column name="name" type="varchar" size="128" required="true" description="Land Name"/>
+    </table>
+	
+    <table name="property" description="a property with a value">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="property Id"/>
+        <column name="name" type="varchar" size="128" required="true" description="the name of the property"/>
+		<column name="value" type="varchar" size="128" required="true" description="the value of the property"/>
+		<column name="type" type="varchar" size="128" required="true" description="the type of the property"/>
+    </table>
+
+    <table name="park_day" description="Information about one day in the park">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="Park Day Id"/>
+		<column name="date" type="timestamp" required="true" description="date time of the park day information is for"/>
+        <column name="open_hour" type="integer" required="true" description="The hour that the park opens"/>
+		<column name="open_min" type="integer" required="true" description="The mins that the park opens"/>
+        <column name="close_hour" type="integer" required="true" description="The hour that the park closes"/>
+		<column name="close_min" type="integer" required="true" description="The min that the park closes"/>
+		<column name="is_closed" type="boolean" required="true" description="is the park closed"/> 
+		<column name="crowd_level" type="integer" required="true" description="The crowd level of the park"/>
+    </table>
+	
+    <table name="ride_closure" description="Information about a closure for a ride">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="ride closure Id"/>
+		<column name="start_date" type="timestamp" required="true" description="The start date of the ride closure"/>
+		<column name="end_date" type="timestamp" required="true" description="The end date of the ride closure"/>
+        <column name="ride_id" type="integer" required="true" description="Foreign Key for ride"/>
+        <foreign-key foreignTable="ride">
+            <reference local="ride_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+    <table name="ride" description="a ride in the park">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true" description="ride Id"/>
+        <column name="name" type="varchar" size="128" required="true" description="Land Name"/>
+        <column name="land_id" type="integer" required="true" description="Foreign Key for Land"/> 
+        <column name="height" type="integer" required="true" description="Height restriction"/> 
+        <column name="popularityLevel" type="integer" required="true" description="The popularity level of the ride compared to other rides in the same park"/> 
+        <column name="currentWaitTime" type="integer" required="true" description="The current wait time of the ride. This value is updated by the server at most very 5 minutes"/> 
+        <column name="fastpass" type="boolean" required="true" description="Does the ride have fast pass?"/> 
+        <column name="averageWaitTime" type="integer" required="true" description="The average wait time"/> 
+        <column name="nextShortestWaitTime" type="integer" required="true" description="the next shortest wait time"/> 
+        <column name="nextShortestDateTime" type="timestamp" required="true" description="the next shortest wait time date"/>
+        <column name="lastUpdate" type="integer" required="true" description="Last time the current wait time, next shortest wait time, next shortest wait date, and average wait time was updated"/> 
+        <column name="singleLine" type="boolean" required="true" description="Does the ride have a singleLine?"/> 
+        <column name="description" type="clob" required="false" description="Description of the ride"/>
+		<column name="is_ride_permently_closed" type="boolean" required="true" description="Is the ride permently closed"/> 
+        <foreign-key foreignTable="land">
+            <reference local="land_id" foreign="id"/>
+        </foreign-key>
+    </table>
+
+</database>

@@ -1,0 +1,60 @@
+<?php
+class RideWaitRetriever
+{
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+ 	function RideWaitRetriever()
+	{
+		require_once('persistence/Ride.php');
+      	require_once('persistence/RideWait.php');
+	}
+	
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+ 	
+	
+	public function getRideWaits($ride, $startTime, $endOfTime)
+	{
+		$c = new Criteria();
+		$c->add(RideWaitPeer::RIDE_ID, $ride->getId());
+		$c->addAnd(RideWaitPeer::DATE_TIME_IN_LINE, $startTime,
+		 Criteria::GREATER_EQUAL);
+		$c->addAnd(RideWaitPeer::DATE_TIME_IN_LINE, $endOfTime, 
+		Criteria::LESS_EQUAL);
+		
+		$rideWaits = RideWaitPeer::doSelect($c);
+		
+		$rideWaits = $this->removeDuplicateEntriesFromTheSameUser($rideWaits);
+		
+		return $rideWaits;
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+ 	
+	private function removeDuplicateEntriesFromTheSameUser($rideWaits)
+	{
+		$removingRideWaits = array();
+		for ($outerIndex = 0; $outerIndex <= count($rideWaits); $outerIndex++) 
+		{
+			for ($InnerIndex = $outerIndex + 1; $InnerIndex <= count($rideWaits); 
+				$InnerIndex++) 
+			{
+				if($rideWaits[$outerIndex]->getUserId() == 
+					$rideWaits[$InnerIndex]->getUserId())
+				{
+					push($removingRideWaits, $rideWaits[$InnerIndex]);
+					break;
+				}
+			}
+		}
+		
+		$rideWaits->getUserId();
+		return $rideWaits;
+	}
+}
+?>

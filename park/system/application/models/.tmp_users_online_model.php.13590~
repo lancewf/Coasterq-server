@@ -1,0 +1,19 @@
+<?php
+
+
+
+class Users_online_model extends Model 
+{
+	public function User_model()
+	{
+		parent::Model();
+		srand(time());
+	}
+	
+	public function getNumberOfUsersOnline()
+	{
+		return rand(867, 1200);
+	}
+}
+
+?>

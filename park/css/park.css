@@ -1,0 +1,105 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;	
+}
+h1 {
+	text-align: center;
+}
+#mainbody {
+	font-size:small;
+	color: #6600CC;
+}
+#usersOnline {
+	text-align: right;
+	font-size:small;
+	color:#6600CC;
+}
+
+#mainbody a img {
+	text-decoration: none;
+	color: #FFFFFF;
+	background: #FFFFFF;
+}
+
+#mainbody table{
+	font-size:small;
+	color: #6600CC;
+}
+
+#mainbody table tr.alternate {
+  background-color: #ddd;
+}
+
+#mainbody table th{
+	background: #EEFFEE;
+	color: #47C3A6;
+}
+
+#mainbody table th a {
+	text-decoration: none;
+	color: #47C3A6;
+}
+
+#mainbody table input{
+	background: #EEFFEE;
+	font-size:small;
+	color: #6600CC;
+	border: 1px solid #6600CC
+}
+
+#mainbody table select{
+	background: #EEFFEE;
+	font-size:small;
+	color: #6600CC;
+	border: 1px solid #6600CC
+}
+
+#top_links {
+	background: #EEFFEE;
+}
+
+#top_links table{
+	font-size:small;
+	color: #6600CC;
+	border-style: none;
+	border-collapse: collapse;
+}
+
+#top_links a {
+	text-decoration: none;
+	font-size:small;
+	color: #6600CC;
+}
+
+#logo {                     
+	text-align:center;
+	background:#ffffff;
+	border-bottom:#ffffff 1px solid;
+	padding:0px;
+	margin:1px;
+	width:100%; 
+}
+#footer a{
+	color: #6600CC;
+}
+
+hr {
+	background: #6600CC;
+	color: #6600CC;
+	border: 1px solid #6600CC;
+}
+
+#parks table{
+	background: #EEFFEE;
+	text-align: center;
+	color: #6600CC;
+	width:50%;
+}
+
+#parks table a
+{
+	text-decoration: none;
+	color: #6600CC;
+}
+img {border:none;}

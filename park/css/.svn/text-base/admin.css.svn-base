@@ -1,0 +1,127 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;	
+}
+h1 {
+	text-align: center;
+}
+#mainbody {
+	font-size:small;
+	color: #6600CC;
+}
+
+#mainbody table{
+	font-size:small;
+	color: #6600CC;
+}
+
+#mainbody table input{
+	background: #EEFFEE;
+	font-size:small;
+	color: #6600CC;
+	border: 1px solid #6600CC
+}
+
+#mainbody table select{
+	background: #EEFFEE;
+	font-size:small;
+	color: #6600CC;
+	border: 1px solid #6600CC
+}
+
+#top_links {
+	background: #EEFFEE;
+}
+
+#top_links table{
+	font-size:small;
+	color: #6600CC;
+	border-style: none;
+	border-collapse: collapse;
+}
+
+#top_links a {
+	text-decoration: none;
+	font-size:small;
+	color: #6600CC;
+}
+
+hr {
+	background: #6600CC;
+	color: #6600CC;
+	border: 1px solid #6600CC;
+}
+
+img {border:none;}
+
+#calendar {
+width:690px;
+border:3px solid black;
+}
+
+.month {
+background-color:black;
+font:bold 12px verdana;
+color:white;
+}
+
+.daysofweek {
+background-color:blue;
+font:bold 12px verdana;
+color:white;
+}
+
+.dayclosed{
+color: white;
+font-size: 12px;
+font-family:verdana;
+background-color: gray;
+padding: 2px;
+}
+
+.dayNoInfo{
+color: white;
+font-size: 12px;
+font-family:verdana;
+background-color: red;
+padding: 2px;
+}
+
+.dayHoursEntered{
+color: blue;
+font-size: 12px;
+font-family:verdana;
+background-color: lightyellow;
+padding: 2px;
+}
+
+.dayHoursEntered #crowdLevel1
+{
+	background-color: green;
+	color: white;
+}
+
+.dayHoursEntered #crowdLevel2
+{
+	background-color: blue;
+	color: white;
+}
+
+.dayHoursEntered #crowdLevel3
+{
+	background-color: yellow;
+	color: black;
+}
+
+.dayHoursEntered #crowdLevel4
+{
+	background-color: orange;
+	color: white;
+}
+
+.dayHoursEntered #closedRides
+{
+	background-color: red;
+	color: white;
+}

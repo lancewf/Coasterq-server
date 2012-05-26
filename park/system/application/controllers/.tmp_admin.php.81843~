@@ -1,0 +1,250 @@
+<?php
+
+/*
+ * The admin page
+ * 
+ */
+class Admin extends Controller
+{
+	function Admin()
+	{
+		parent::Controller();
+		
+		$this->load->model('parkclock_model');
+		$this->load->model('ride_model');
+		$this->load->model('parkDay_model');
+		$this->load->model('rideclosure_model');
+		$this->load->model('ride_model');
+		$this->load->model('property_model');
+	}
+
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+	
+	/*
+	 * 
+	 * The default page for the park page
+	 */
+	public function index()
+	{
+		//if("76.212.159.65" == $_SERVER['REMOTE_ADDR'])
+		//{
+	   		$data = $this->getData();
+  	   
+	   		$this->load->view('admin/index', $data);
+		//}
+	}
+	
+	
+	/*
+	 * Get the park days from the server to the client
+	 * 
+	 * The format that is day '-' month '-' year '-' is closed '-' 
+	 * open hour '-' open minutes '-' close hour '-' close min
+	 * 
+	 * The park days are seperated by a comma ','
+	 */
+	public function getParkDays()
+	{
+		$parkDays = $this->parkDay_model->getParkDays();
+		$output = "";
+		
+		if(count($parkDays) > 0)
+		{
+			foreach($parkDays as $parkDay)
+			{
+				$date = $parkDay->getDate(null);
+				
+				$day = date("j",$date);
+				$month = date("n",$date);
+				$year = date("Y",$date);
+				$isClosed = "true";
+				
+				if(!$parkDay->getIsClosed())
+				{
+					$isClosed = "false";
+				}
+							
+				$output .= $day . "-" . $month . "-" . $year .
+	            	"-" . $isClosed . "-" . $parkDay->getOpenHour() . 
+	            	"-" . $parkDay->getOpenMin() . "-" . 
+					$parkDay->getCloseHour() . "-" . 
+					$parkDay->getCloseMin() . "-" . 
+					$parkDay->getCrowdLevel() . ",";
+			}
+			$output = substr($output, 0, -1);
+		}
+		else
+		{
+			$output = "empty";
+		}
+		
+		echo $output;
+	}
+	
+	/**
+	 * Update a ride closure
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function deleteRideClosure()
+	{
+		$rideClosureId = $this->input->post('rideClosureId');
+		
+		$this->rideclosure_model->deleteRideClosure($rideClosureId);
+		
+		echo "success";
+	}
+	
+	/**
+	 * Update a ride closure
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function createNewRideClosure()
+	{
+		$rideClosureText = $this->input->post('rideClosure');
+		
+		$item = split("-", $rideClosureText);
+
+		$startDay = $item[0];
+		$startMonth = $item[1];
+		$startYear = $item[2];
+		$endDay = $item[3];
+		$endMonth = $item[4];
+		$endYear = $item[5];
+		$rideId = $item[6];
+		
+		$startDate = mktime(0, 0, 0, 
+					$startMonth, $startDay, $startYear);
+					
+		$endDate = mktime(0, 0, 0, 
+					$endMonth, $endDay, $endYear);
+		
+		$rideClosureId = $this->rideclosure_model->createNewRideClosure(
+			$startDate, $endDate, $rideId);
+			
+		echo $rideClosureId;
+	}
+	
+	/**
+	 * Update a ride data
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function updateRideData()
+	{
+		$rideText = $this->input->post('rideData');
+		
+		$item = split("-", $rideText);
+
+		$id = $item[0];
+		$popularity = $item[1];
+		$closedPermanently = $item[2];
+		
+		if($closedPermanently == "true")
+		{
+			$closedPermanently = true;
+		}
+		else
+		{
+			$closedPermanently = false;
+		}
+		
+		$this->ride_model->updateRideData(
+			$id, $popularity, $closedPermanently);
+			
+		echo "success";
+	}
+	
+	/**
+	 * Update a ride closure
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function updateRideClosure()
+	{
+		$rideClosureText = $this->input->post('rideClosure');
+		
+		$item = split("-", $rideClosureText);
+
+		$id = $item[0];
+		$startDay = $item[1];
+		$startMonth = $item[2];
+		$startYear = $item[3];
+		$endDay = $item[4];
+		$endMonth = $item[5];
+		$endYear = $item[6];
+		$rideId = $item[7];
+		
+		$startDate = mktime(0, 0, 0, 
+					$startMonth, $startDay, $startYear);
+					
+		$endDate = mktime(0, 0, 0, 
+					$endMonth, $endDay, $endYear);
+		
+		$this->rideclosure_model->updateRideClosure(
+			$id, $startDate, $endDate, $rideId);
+			
+		echo "success";
+	}
+	
+	public function updateParkDays()
+	{
+		$parkDaysText = $this->input->post('parkDays');
+		
+		foreach(split(",", $parkDaysText) as $parkDaysItem)
+		{
+			$item = split("-", $parkDaysItem);
+
+			$day = $item[0];
+			$month = $item[1];
+			$year = $item[2];
+			$isClosed = $item[3];
+			$openHour = $item[4];
+			$openMin  = $item[5];
+			$closeHour = $item[6];
+			$closeMin = $item[7];
+			$crowdLevel = $item[8];
+			
+			if($isClosed == "true")
+			{
+				$isClosed = true;
+			}
+			else
+			{
+				$isClosed = false;
+			}
+
+			$this->parkDay_model->addParkDay(
+				$day, $month, $year,  $isClosed, $openHour, 
+				$openMin, $closeHour, $closeMin, $crowdLevel);
+		}
+		
+		echo "success";
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+
+	/*
+	 * Get the data for the javascript client
+	 */
+	private function getData()
+	{
+		$data['rides'] = $this->ride_model->getRides();
+		$data['parkName'] = $this->property_model->getParkName();
+	    $data['parkClock'] = $this->parkclock_model->getParkClock();
+		$data['rideClosures'] = $this->rideclosure_model->getRideClosures();
+		$data['homeUrl'] = $this->property_model->getHomeURL();
+		
+		return $data;	
+	}
+}
+?>

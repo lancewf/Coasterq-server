@@ -1,0 +1,199 @@
+/**
+ * @author lancewf
+ */
+function ParkSearchNodeTreeBuilder()
+{
+	this.buildTree = function(listener)
+	{
+		var root = new Node();
+		root.setListener(listener);
+		root.setName("");
+		root.setIsLeaf(false);
+		
+		root.addChild(this._buildDisneyParks(listener));
+		
+		root.addChild(this._buildUniversalParks(listener));
+		
+		root.addChild(this._buildSixFlagsParks(listener));
+		
+		root.addChild(this._buildOtherParks(listener));		
+		
+		return root;
+	}
+	
+	this._buildDisneyParks = function(listener)
+	{
+		var disney = new Node();
+		disney.setName("Walt Disney Parks");
+		disney.setIsLeaf(false);
+		disney.setListener(listener);
+		
+		var node = new Node();
+		node.setName("Disneyland Resort");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/disneyland/");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("California Adventure");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/california-adventure");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("Magic Kingdom");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/magic-kingdom");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("Disney's Animal Kingdom");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/animal-kingdom");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("Epcot");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/epcot");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("Disney's Hollywood Studios");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/hollywood-studios");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+		
+		node = new Node();
+		node.setName("Tokyo Disneyland");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/tokyo-disneyland");
+		node.setListener(listener);
+		
+		disney.addChild(node);
+
+		return disney;
+	}
+	
+	this._buildSixFlagsParks = function(listener)
+	{
+		var sixflags = new Node();
+		sixflags.setName("Six Flags Parks");
+		sixflags.setIsLeaf(false);
+		sixflags.setListener(listener);
+		
+		var node = new Node();
+		node.setName("Six Flags Magic Mountain");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/magic-mountain");
+		node.setListener(listener);
+		
+		sixflags.addChild(node);
+		
+//		node = new Node();
+//		node.setName("Six Flags Great Adventure");
+//		node.setIsLeaf(true);
+//		node.setChildLink("http://www.coasterq.com/great-adventure");
+//		node.setListener(listener);
+//				
+//		sixflags.addChild(node);
+		
+		node = new Node();
+		node.setName("Six Flags Over Texas");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/over-texas");
+		node.setListener(listener);
+		
+		sixflags.addChild(node);
+		
+		return sixflags;
+	}
+	
+	this._buildUniversalParks = function(listener)
+	{
+		var universal = new Node();
+		universal.setName("Universal Studios Parks");
+		universal.setIsLeaf(false);
+		universal.setListener(listener);
+		
+		var node = new Node();
+		node.setName("Universal Studios Florida");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/universal-studios-florida/");
+		node.setListener(listener);
+		
+		universal.addChild(node);
+		
+		var node = new Node();
+		node.setName("Universal Studios Hollywood");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/universal-studios-hollywood");
+		node.setListener(listener);
+		
+		universal.addChild(node);
+		
+		var node = new Node();
+		node.setName("Universal's Islands of Adventure");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/islands-of-adventure");
+		node.setListener(listener);
+		
+		universal.addChild(node);
+		
+		return universal;
+	}
+	
+	this._buildOtherParks = function(listener)
+	{
+		var other = new Node();
+		other.setName("Other Parks");
+		other.setIsLeaf(false);
+		other.setListener(listener);
+		
+		var node = new Node();
+		node.setName("Knott's Berry Farm");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/knotts-berry-farm/");
+		node.setListener(listener);
+		
+		other.addChild(node);
+		
+		var node = new Node();
+		node.setName("Busch Gardens Tampa Bay");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/busch-gardens-tampa/");
+		node.setListener(listener);
+		
+		other.addChild(node);
+		
+		var node = new Node();
+		node.setName("LEGOLAND California");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/legoland-california/");
+		node.setListener(listener);
+		
+		other.addChild(node);
+		
+		var node = new Node();
+		node.setName("SeaWorld Orlando");
+		node.setIsLeaf(true);
+		node.setChildLink("http://www.coasterq.com/seaworld-orlando/");
+		node.setListener(listener);
+		
+		other.addChild(node);
+		
+		return other;
+	}
+}

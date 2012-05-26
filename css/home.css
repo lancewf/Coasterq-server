@@ -1,0 +1,95 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;
+}
+
+a{
+		color: #039;
+}
+	
+#logo {
+	text-align: center;
+}
+
+img {
+	border:none;
+}
+
+#head hr{
+	background: #eceff5;
+	color: #eceff5;
+	border: 9px solid #eceff5;
+}
+
+hr {
+	background: #039;
+	color: #039;
+	border: 1px solid #039;
+}
+
+#noscriptparks a {
+	text-decoration: none;
+	color: #039;
+}
+#selectpark {
+	color: #000;
+	font-size:x-large;
+	font-family:"Times New Roman",Georgia,Serif;
+	font-weight: bold;
+}
+
+#noscriptparks table{
+	background: #eceff5;
+	text-align: center;
+	color: #039;
+	width:50%;
+}
+
+#site a
+{
+	color: #3b5998;
+}
+
+#sitemap table{
+	border: solid;
+	border-color: #039;
+	background: #eceff5;
+	text-align: center;
+	color: #039;
+	width:50%;
+}
+
+#sitemap table h3 a{
+	font-family: Arial;
+}
+
+#sitemap a {
+	text-decoration: none;
+	color: #039;
+}
+
+#des
+{
+	font-size:small;
+	text-align: center;
+	font-family: Arial;
+	color: #039;
+}
+
+#text table{
+	background: #eceff5;
+	text-align: left;
+	color: #039;
+	width:80%;
+}
+
+#text a
+{
+	text-decoration: none;
+}
+
+h3{
+	text-align: center;
+	color: #039;
+}

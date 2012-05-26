@@ -1,0 +1,187 @@
+<?php
+
+require_once('Future30MinAverageTimeCalcAtom.php');
+require_once('Future60MinAverageTimeCalcAtom.php');
+require_once('Future90MinAverageTimeCalcAtom.php');
+require_once('Past30MinAverageTimeCalcAtom.php');
+require_once('Past60MinAverageTimeCalcAtom.php');
+require_once('Past90MinAverageTimeCalcAtom.php');
+
+class DaysBeforeCalcAtomBuilder
+{
+	// -------------------------------------------------------------------------
+	// Private Variables
+	// -------------------------------------------------------------------------
+	
+	private $timestamp;
+	private $crowdLevelCalculator;
+	private $rideWaitRetriever;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+	function __construct($timestamp, 
+		$crowdLevelCalculator, $rideWaitRetriever)
+	{
+		$this->timestamp = $timestamp;
+		$this->crowdLevelCalculator = $crowdLevelCalculator;
+		$this->rideWaitRetriever = $rideWaitRetriever;
+	}
+	
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+	
+	public function build()
+	{		
+		$pastTimestamp = $this->timestamp;
+		$currentCrowdLevel = $this->crowdLevelCalculator->
+			getCrowdLevelFromTimestamp($pastTimestamp);
+			
+		$dayCalcAtoms = array();
+		
+		$pastCrowdLevel = null;
+		$daysBack = 1;
+		$foundDays = 0;
+		while($foundDays < 3 && $daysBack < 14)
+		{
+			$pastTimestamp -= AverageTimeCalcAtom::TIME_1_DAY;
+		
+			$pastCrowdLevel = $this->crowdLevelCalculator->
+				getCrowdLevelFromTimestamp($pastTimestamp);
+				
+			if($currentCrowdLevel == $pastCrowdLevel)
+			{
+				$newCalcAtoms = $this->createDayAtoms(
+					$pastTimestamp, $daysBack);
+					
+				$dayCalcAtoms = array_merge($dayCalcAtoms, $newCalcAtoms);
+					
+				$foundDays++;
+			}
+				
+			$daysBack++;
+		}
+		
+		return $dayCalcAtoms;
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+	
+	private function createDayAtoms($pastTimestamp, $daysBack)
+	{
+		$dayCalcAtoms = array();
+		
+		array_push($dayCalcAtoms, 
+			$this->createPast30MinAtom($pastTimestamp, $daysBack));
+		
+		array_push($dayCalcAtoms, 
+			$this->createPast60MinAtom($pastTimestamp, $daysBack));
+		
+		array_push($dayCalcAtoms, 
+			$this->createPast90MinAtom($pastTimestamp, $daysBack));
+		
+		array_push($dayCalcAtoms, 
+			$this->createFuture30MinAtom($pastTimestamp, $daysBack));
+		
+		array_push($dayCalcAtoms, 
+			$this->createFuture60MinAtom($pastTimestamp, $daysBack));
+		
+		array_push($dayCalcAtoms, 
+			$this->createFuture90MinAtom($pastTimestamp, $daysBack));
+			
+		return $dayCalcAtoms;
+	}
+	
+	private function createFuture90MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$future90Min = new Future90MinAverageTimeCalcAtom(
+			$this->rideWaitRetriever);
+		
+		$future90Min->setTimestamp($pastTimestamp);
+		
+		$future90Min->setMaxPercentAllowed(0.30);
+		
+		$future90Min->setEachWaitTimePercent(0.0025);
+
+		return $future90Min;
+	}
+	
+	private function createFuture60MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$future60Min = new Future60MinAverageTimeCalcAtom(
+			$this->rideWaitRetriever);
+		
+		$future60Min->setTimestamp($pastTimestamp);
+		
+		$future60Min->setMaxPercentAllowed(0.30);
+		
+		$future60Min->setEachWaitTimePercent(0.005);
+
+		return $future60Min;
+	}
+	
+	private function createFuture30MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$future30Min = new Future30MinAverageTimeCalcAtom(
+			$this->rideWaitRetriever);
+		
+		$future30Min->setTimestamp($pastTimestamp);
+		
+		$future30Min->setMaxPercentAllowed(0.30);
+		
+		$future30Min->setEachWaitTimePercent(0.01);
+		
+		return $future30Min;
+	}
+	
+	private function createPast90MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$past90Min = new Past90MinAverageTimeCalcAtom($this->rideWaitRetriever);
+		
+		$past90Min->setTimestamp($pastTimestamp);
+		
+		$past90Min->setMaxPercentAllowed(0.30);
+		
+		$past90Min->setEachWaitTimePercent(0.0025);
+
+		return $past90Min;
+	}
+	
+	private function createPast60MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$past60Min = new Past60MinAverageTimeCalcAtom($this->rideWaitRetriever);
+		
+		$past60Min->setTimestamp($pastTimestamp);
+		
+		$past60Min->setMaxPercentAllowed(0.30);
+		
+		$past60Min->setEachWaitTimePercent(0.005);
+
+		return $past60Min;
+	}
+	
+	private function createPast30MinAtom( 
+		$pastTimestamp, $daysBack)
+	{
+		$past30Min = new Past30MinAverageTimeCalcAtom($this->rideWaitRetriever);
+		
+		$past30Min->setTimestamp($pastTimestamp);
+		
+		$past30Min->setMaxPercentAllowed(0.30);
+		
+		$past30Min->setEachWaitTimePercent(0.01);
+		
+		return $past30Min;
+	}
+}
+
+?>

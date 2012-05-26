@@ -1,0 +1,115 @@
+<?php
+
+/*
+ * The main page that controles 
+ * 
+ */
+class Main extends Controller
+{
+	function Main()
+	{
+		parent::Controller();
+		
+		$this->load->model('parkclock_model');
+		$this->load->model('ride_model');
+		$this->load->model('user_model');
+		$this->load->model('itinerary_model');
+		$this->load->model('users_online_model');
+		$this->load->model('property_model');
+	}
+
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+	
+	/*
+	 * 
+	 * The default page for the park page
+	 */
+	public function index()
+	{
+		$this->myq();
+	}
+
+	/*
+	 * The web address that starts the advanced ride page 
+	 */
+	public function rides()
+	{
+		$this->_loadPage('rides');
+	}
+
+	/*
+	 * The web address that starts the enter ride time page
+	 */
+	public function enterridetime()
+	{
+		$this->_loadPage('enterridetime');
+	}
+	
+	/*
+	 * The web address that starts the user in their queue 
+	 */
+	public function myq()
+	{
+		$this->_loadPage('myq');
+	}
+	
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+
+	/*
+	 * Load the client javascript page
+	 * 
+	 * @param $startPage The page that is loaded to start
+	 */
+	private function _loadPage($startPage)
+	{
+	   $data = $this->_getData();
+  	   $data['startPage'] = $startPage;
+  	   
+	   $this->load->view('index', $data);
+	}
+	
+	/*
+	 * Get the data for the javascript client
+	 */
+	private function _getData()
+	{
+		$user = $this->user_model->getOrCreateUser();
+		$data['rides'] = $this->ride_model->getRides();
+		$data['itineraryRides'] = 
+			$this->itinerary_model->getItineraryRidesSortedByPriority($user);
+		$data['usersOnline'] = $this->users_online_model->getNumberOfUsersOnline();
+	    $data['parkClock'] = $this->parkclock_model->getParkClock();
+		$data['parkOpenRanges'] = $this->parkclock_model->getParkOpenRanges();
+		$data['parkName'] = $this->property_model->getParkName();
+		$data['homeUrl'] = $this->property_model->getHomeURL();
+		$data['isFasspassAvailable'] = $this->property_model->getIsFasspassAvailable();
+		
+		return $data;	
+	}
+	
+	/*
+	 * Is the client using an iphone
+	 */
+	private function _isIPhone()
+	{
+	   $browserInfo = $_SERVER['HTTP_USER_AGENT'];
+	   
+	   return strstr(strtolower($browserInfo), 'iphone'); 
+	}
+	
+	/**
+	 * Is the client using a Microsoft mobile browser
+	 *
+	 * @return true if the client is using a mobile browser, false otherwise. 
+	 */
+	private function _isMobile()
+	{
+	   $browserInfo = $_SERVER['HTTP_USER_AGENT'];
+	   return strstr(strtolower($browserInfo), "mobile");
+	}
+}
+?>

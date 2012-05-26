@@ -1,0 +1,234 @@
+<?php
+/*
+ * The web services for the javascript client
+ */
+class Services extends Controller
+{
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+
+    /*
+     * The contructor for the web services
+     * 
+     * This loads all the models needed for all the services
+     */
+	function Services()
+	{
+		parent::Controller();
+		
+		require_once('calculator/RideTimeCalculator.php');
+		
+		$this->load->model('ride_model');
+		$this->load->model('itinerary_model');
+		$this->load->model('rideWait_model');
+		$this->load->helper('cookie');
+		$this->load->model('user_model');
+	}
+
+	// -------------------------------------------------------------------------
+	// Public Members
+	// -------------------------------------------------------------------------
+
+	//http://192.168.1.8/coasterq/index/services/
+	/**
+	 * The default web services page
+	 */
+	public function index()
+	{
+		//
+		// Do nothing
+		//
+	}
+
+	/**
+	 * Update the server with the current rides in the itinerary
+	 *
+	 * itineraryRides - variable pasted in the post method that contains
+	 * all the current rides and priorities
+	 */
+	public function updateItinerary()
+	{
+		$user = $this->user_model->getUser();
+
+		if($user)
+		{
+			$updatedItineraryRidesText = $this->input->post('itineraryRides');
+
+			if(!$updatedItineraryRidesText)
+			{
+				$updatedItineraryRidesText = $this->input->get('itineraryRides');
+			}
+
+			$updatedItineraryRides = $this->_readItineraryRidesText(
+				$updatedItineraryRidesText);
+
+			$currentItineraryRides =
+				$this->itinerary_model->getItineraryRides($user);
+
+			foreach($currentItineraryRides as $itineraryRide)
+			{
+				$matchingItineraryRide = $this->_getMatchingItineraryRide(
+					$updatedItineraryRides, $itineraryRide);
+
+				if($matchingItineraryRide !== null)
+				{
+					if($itineraryRide->getPriority() !=
+					$matchingItineraryRide->getPriority())
+					{
+						$itineraryRide->setPriority(
+						$matchingItineraryRide->getPriority());
+
+						$itineraryRide->save();
+					}
+				}
+				else
+				{
+					$itineraryRide->delete();
+				}
+			}
+
+			foreach($updatedItineraryRides as $itineraryRide)
+			{
+				if(!$this->_getMatchingItineraryRide(
+					$currentItineraryRides, $itineraryRide))
+				{
+					$rideIdToAdd = $itineraryRide->getRideId();
+					$priority = $itineraryRide->getPriority();
+
+					$ride = RidePeer::retrieveByPK($rideIdToAdd);
+					$this->itinerary_model->addItineraryRide(
+					$user, $ride, $priority);
+				}
+			}
+
+			echo "success";
+		}
+		else
+		{
+			$this->load->view('forbidden');
+		}
+	}
+
+	/*
+	 * The web service method to enter ride times
+	 * All inputs are from the post method
+	 * 
+	 * The post label are:
+	 * rideId - the id of the ride
+	 * waitmin - the total time of the ride wait in minutues 
+	 * timehour - the time of the day's hour of the wait time entered
+	 * timemin - the time of the day's minutues of the wait time entered
+	 * dayofmonth - the day of the month of the wait time entered 
+	 * month - the month of the year of the wait time entered
+	 * year - the year of the wait time entered
+	 * 
+	 * This method does not allow a ride time to be entered if the client
+	 * 
+	 */
+	public function enterTimeForRide()
+	{
+		$user = $this->user_model->getUser();
+
+		if($user)
+		{
+			$rideId = $this->input->post('rideId');
+			$waitMin = $this->input->post('waitmin');
+			$timeHour = $this->input->post('timehour');
+			$timeMin = $this->input->post('timemin');
+			$dayOfMonth = $this->input->post('dayofmonth');
+			$month = $this->input->post('month');
+			$year = $this->input->post('year');
+
+			if($this->rideWait_model->isRideWaitValid($user, $rideId, $waitMin,
+				$timeMin, $timeHour, $dayOfMonth, $month, $year))
+			{
+				$date = mktime($timeHour, $timeMin, 0, 
+					$month, $dayOfMonth, $year);
+
+				$this->rideWait_model->addRideWait(
+					$user, $rideId, $date,  $waitMin);
+
+				echo "success";
+			}
+			else
+			{
+				echo "max_entries";		
+			}
+		}
+		else
+		{
+			$this->load->view('forbidden');
+		}
+	}
+
+	/*
+	 * Get an update of the ride time from the server to the client
+	 * 
+	 * The format that is ride id '-' current wait in minutes '-' 
+	 * average wait in minutes '-' shortest wait time of day hour '-' 
+	 * shortest wait time of day min '-' next shortest wait time in minutes
+	 * 
+	 * The ride are seperated by a comma ','
+	 */
+	public function getRidesUpdate()
+	{
+		$rideTimeCalculator = new RideTimeCalculator(); 
+		$rides = $this->ride_model->getRides();
+		$output = "";
+		foreach($rides as $ride)
+		{
+			$dateTime = $rideTimeCalculator->getNextShortestWaitDateTime($ride);
+			$hour = date("G",$dateTime);
+			$min = date("i",$dateTime);
+
+			$output .= $ride->getId() . "-" . 
+				$rideTimeCalculator->getCurrentWait($ride) .
+            	"-" . $rideTimeCalculator->getAverageWait($ride) . "-" . $hour . 
+            	"-" . $min . "-" . 
+				$rideTimeCalculator->getNextShortestWaitTime($ride) . ",";
+		}
+		echo substr($output, 0, -1);
+	}
+
+	// -------------------------------------------------------------------------
+	// Private Members
+	// -------------------------------------------------------------------------
+
+	private function _readItineraryRidesText($updatedItineraryRidesText)
+	{
+		foreach(split(",", $updatedItineraryRidesText) as $itineraryRideItem)
+		{
+			$item = split("-", $itineraryRideItem);
+
+			$itineraryRide = new ItineraryRide();
+
+			$itineraryRide->setPriority($item[0]);
+
+			$itineraryRide->setRideId($item[1]);
+
+			$itineraryRides[] = $itineraryRide;
+		}
+
+		return $itineraryRides;
+	}
+
+	private function _getMatchingItineraryRide($itineraryRides,
+		$lookForItineraryRide)
+	{
+		$matchingItineraryRide = null;
+
+		foreach($itineraryRides as $itineraryRide)
+		{
+			if($itineraryRide->getRideId() ==
+			$lookForItineraryRide->getRideId())
+			{
+				$matchingItineraryRide = $itineraryRide;
+			}
+		}
+
+		return $matchingItineraryRide;
+	}
+}
+
+?>

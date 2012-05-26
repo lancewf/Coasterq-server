@@ -1,0 +1,49 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	
+	<title>CoasterQ - <?= $parkName; ?> Ride Wait Times</title>
+	
+	<meta name="description" content="CoasterQ provides a continuous live feed of the line wait times for your favorite <?= $parkName; ?> rides. Create a ride itinerary and enter ride wait times that you are experiencing to improve the times displayed." />
+	<meta name='robots' content='all' />
+	<meta http-equiv='expires' content='-1' />
+	<meta http-equiv='pragma' content='no-cache' />
+	<meta name="viewport" content="width=368;height=483;initial-scale=1.0;">
+	
+	<link rel="shortcut icon" href="<?= base_url();?>/img/favicon.ico" type="image/x-icon" />
+	<link rel="home" href="http://www.coasterq.com/" title="Home" />
+
+	<link href="<?= base_url();?>css/park.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript">
+		//<![CDATA[
+			base_url = '<?= base_url();?>';
+			base_services_url = base_url + 'index.php/services/';
+			home_url = '<?=$homeUrl; ?>';
+		//]]>
+	</script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/PageHolder.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/Ride.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/ItineraryUpdateManager.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/RideSearchManager.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/ItineraryRide.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/RideManager.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/ItineraryRideManager.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/RideWaitEntryManager.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/RideWaitEntry.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/ParkClock.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/helper/HTMLRideDisplayer.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/helper/AjaxTransport.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/helper/RideSorter.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/helper/ItineraryRideSorter.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/RideDisplayView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/EnterTimeView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/PageLinkView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/ItineraryRideView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/MobileRideTimesView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/MobileServerStatusView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/RideSearchView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/view/RideWaitSubmitedPageView.js"></script>
+	<script type="text/javascript" src="<?= base_url();?>js/data/ParkOpenRange.js"></script>
+	
+</head>
+

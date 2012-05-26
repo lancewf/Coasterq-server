@@ -1,0 +1,176 @@
+/**
+ * @author lancewf
+ */
+function Node()
+{
+	// -------------------------------------------------------------------------
+	// Public Class Variables
+	// -------------------------------------------------------------------------
+	
+	this.INTERNAL_NODE_TYPE = 'internal';
+	this.TEXT_NODE_TYPE = 'text';
+	this.LINK_NODE_TYPE = 'link';
+	
+	// ------------------------------------------------
+	// Private variables and data
+	// ------------------------------------------------
+	
+	this._name;
+	this._childrenlink = BuildGuid();
+	this._isLeaf;
+	this._children = new Array();
+	this._isChildrenVisible = false;
+	this._nodeType = "internal";
+	
+	// ------------------------------------------------
+	// Public Members
+	// ------------------------------------------------
+	
+	this.setNodeType = function(nodeType)
+	{
+		this._nodeType = nodeType;
+	}
+	
+	this.getNodeType = function()
+	{
+		return this._nodeType;
+	}
+	
+	this.addChild = function(child)
+	{
+		this._children.push(child);
+	}
+	
+	this.setName = function(name)
+	{
+		this._name = name;	
+	}
+	
+	this.getName = function()
+	{
+		return this._name;
+	}
+	
+	this.setIsLeaf = function(isLeaf)
+	{
+		this._isLeaf = isLeaf;
+	}
+	
+	this.isLeaf = function()
+	{
+		return this._isLeaf;
+	}
+	
+	this.setChildLink = function(urlLink)
+	{
+		this._childrenlink = urlLink;
+	}
+	
+	this.getChildrenLink = function()
+	{
+		return this._childrenlink;
+	}
+	
+	// return if clicked
+	this.click = function(childrenLink)
+	{
+		if(this.getChildrenLink() == childrenLink)
+		{
+			if(this._isChildrenVisible)
+			{
+				this.hideChildren();
+			}
+			else
+			{
+				this.showChildren();
+			}
+			return true;
+		}
+		else
+		{
+			var isClicked = false;
+			if(this._isChildrenVisible)
+			{
+				for(var index = 0; index < this._children.length ; index++)
+				{
+					var isChildClicked = this._children[index].click(childrenLink);
+					
+					if(!isChildClicked)
+					{
+						this._children[index].hideChildren();
+					}
+					else
+					{
+						isClicked = isChildClicked;
+					}
+				}
+			}
+			return isClicked;
+		}
+	}
+	
+	this.showChildren = function()
+	{
+		if(!this._isChildrenVisible)
+		{
+			var html = this.getChildrenHTML();
+   
+        	document.getElementById(this._childrenlink).innerHTML = html;
+			this._isChildrenVisible = true;
+		}
+	}
+	
+	this.hideChildren = function()
+	{
+		if(this._isChildrenVisible)
+		{
+			document.getElementById(this._childrenlink).innerHTML = "";
+			this._isChildrenVisible = false;
+		}
+	}
+	
+	this.setIsChildrenVisible = function(isChildrenVisible)
+	{
+		this._isChildrenVisible = isChildrenVisible;
+	}
+	
+	this.setListener = function(listener)
+	{
+		this._listener = listener;
+	}
+	
+	this.getChildrenHTML = function()
+	{
+		var html =  "";
+			
+		for(var index = 0; index < this._children.length ; index++)
+		{
+			if(this._children[index].isLeaf())
+			{
+				if(this._children[index].getNodeType() == this.TEXT_NODE_TYPE)
+				{
+					html += 
+            			"<div id='text'>" + 
+						this._children[index].getName() + "</div><br />" ;
+				}
+				else//if(this._nodeType == this.LINK_NODE_TYPE)
+				{
+					html += 
+            			"<div id='site'>" + 
+						"<A  HREF='" + this._children[index].getChildrenLink() + "'  >" + 
+						this._children[index].getName() + "</A></div><br />" ;	
+				}
+			}
+			else
+			{
+				html += 
+            		"<A  HREF='/' onClick='clicked(\"" + this._children[index].getChildrenLink() + "\", \"" +
+					this._listener + "\");" +
+            		" return false' ><h3>" + this._children[index].getName() + "</h3></A>" +
+					"<div id='" + this._children[index].getChildrenLink() + "'></div><br />";
+			}
+		}
+			
+		return html;
+	}
+}

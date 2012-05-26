@@ -1,0 +1,56 @@
+<noscript>
+<h1 align="center">	<?= $parkName; ?> </h1>
+Please enable Javascript
+<h3 align="center">Ride Wait Times</h3>
+<hr />
+<table align="center">
+	<thead>
+		<tr>
+			<th width="1%">
+			</th>
+	        <th width="41%">
+	        	Ride
+	        </th>
+	        <th width="41%">
+	            Location
+	        </th>
+	        <th width="17%">
+	        	Current Wait 
+	        </th>
+        </tr>
+	</thead>
+	<tbody>
+		<?php foreach($rides as $ride): ?>
+			<tr>
+				<td>
+					<?php if($ride->getFastpass()): ?>
+					    <img src="<?= base_url();?>img/fastpass.png" alt="Fastpass">
+					<?php endif; ?>
+					<?php if($ride->getHeight() > 0): ?>
+    					<img src="<?= base_url();?>img/height.png" alt="Height Requirement">
+					<?php endif; ?>
+				</td>
+				<td>
+					<?=$ride->getName(); ?>
+				</td>
+				<td>
+					<?=$ride->getLand()->getName(); ?>
+				</td>
+				<td>
+					<?php if($ride->getCurrentwaittime() == -1): ?>
+						Closed
+					<?php else: ?>
+						<?=$ride->getCurrentwaittime(); ?> mins
+					<?php endif; ?>
+					
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+<hr />
+<div align="left">
+	<img src="<?= base_url();?>img/fastpass.png" alt="Fastpass">  Fastpass <br \>
+    <img src="<?= base_url();?>img/height.png" alt="Height Requirement"> Height Requirement
+</div>
+</noscript>

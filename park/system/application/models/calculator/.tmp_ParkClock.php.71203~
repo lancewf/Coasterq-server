@@ -1,0 +1,113 @@
+<?php
+
+
+/*
+ * Get the current time at the park. 
+ */
+class ParkClock
+{
+	private $timestamp;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+	function __construct($timestamp = null)
+	{
+		if($timestamp == null)
+		{
+			$timestamp = time();
+		
+			$timestamp += park_time_diff() * 60 * 60;
+		}
+		
+		$this->timestamp = $timestamp;
+	}
+	
+	/**
+	 * Get the raw time stamp of the park. 
+	 * @return 
+	 */
+	public function getTime()
+	{
+		return $this->timestamp;
+	}
+	
+	/**
+	 * is the park open
+	 * 
+	 * @return 
+	 */
+	public function isOpen()
+	{	
+		if($this->getHour() >= 2 && $this->getHour() < 7)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	/**
+	 * Get the current hour of park. 
+	 * 
+	 * 0 - 23
+	 * @return 
+	 */
+	public function getHour()
+	{
+		$timestamp = $this->getTime();	
+		
+		return date("G",$timestamp);
+	}
+	
+	/**
+	 * Get the current hour of park. 
+	 * 
+	 * 00 - 59
+	 * @return 
+	 */
+	public function getMinutes()
+	{
+		$timestamp = $this->getTime();	
+		
+		return date("i",$timestamp);
+	}
+	
+	/**
+	 * Get the day of the month
+	 * @return 
+	 */
+	public function getDayOfMonth()
+	{
+		$timestamp = $this->getTime();
+		
+		return date("j",$timestamp);
+	}
+
+	/**
+	 * Get the month of the park
+	 * @return 
+	 */
+	public function getMonth()
+	{
+		$timestamp = $this->getTime();
+		
+		return date("n",$timestamp);
+	}
+	
+	/**
+	 * Get the year at the park example 2009
+	 * @return 
+	 */
+	public function getYear()
+	{
+		$timestamp = $this->getTime();
+		
+		return date("Y",$timestamp);
+	}
+}
+
+?>

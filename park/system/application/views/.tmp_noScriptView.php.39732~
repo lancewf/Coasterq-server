@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+    <?= $this->load->view('header');?>
+   
+    <body>
+    	<div align="center" id="logo">
+			<a href="<?=$homeUrl; ?>"> 
+				<img src="<?= base_url();?>img/cqlogo.png" alt="CoasterQ"  />
+			</a>
+		</div>
+    	<hr />
+		<div id="usersOnline" > </div> 
+		<div id="top_links"> </div>
+		<br />
+		
+		<center>
+			<?= $this->load->view('advertisement');?>
+		</center>
+
+    	<div id='mainbody' > 
+		<script type="text/javascript">
+			document.write("<center>Loading, Please Wait ...</center>");
+		</script>
+		
+		<?php if($startPage == 'myq'): ?>
+			<?= $this->load->view('myq');?>
+		<?php elseif ($startPage == 'enterRideTime'): ?>
+			<?= $this->load->view('enterridetime');?>
+		<?php else: ?><!--$startPage == rides -->
+			<?= $this->load->view('rideData');?>
+		<?php endif; ?>
+		
+		</div>
+		
+    	<br>
+		<center>
+			<?= $this->load->view('advertisement');?>
+		</center>
+		
+        <?= $this->load->view('footer');?>
+        <?= $this->load->view('loadData');?>
+		<?= $this->load->view('googleAnalytics');?>
+		
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<?php
+
+/**
+ * This object represents a day of the park's open and close time. 
+ */
+class ParkOpenRange
+{
+	private $openHour;
+	private $openMin;
+	private $closeHour;
+	private $closeMin;
+	private $day;
+	private $month;
+	private $year;
+	
+	// -------------------------------------------------------------------------
+	// Contructor
+	// -------------------------------------------------------------------------
+	
+	function __construct()
+	{
+		
+	}
+	
+	/**
+	 * Set the hour that the park opens 
+	 * @parma 
+	 */
+	public function setOpenHour($openHour)
+	{
+		$this->openHour = $openHour;
+	}
+	
+	/**
+	 * Sets the minutes in the hour that the park opens
+	 * @return 
+	 * @param $openMin - the minutes to set. 
+	 */
+	public function setOpenMin($openMin)
+	{
+		$this->openMin = $openMin;
+	}
+	
+	/**
+	 * Sets the closed hour for the park
+	 * @return void 
+	 * @param $closeHour - the hour to the park closed
+	 */
+	public function setCloseHour($closeHour)
+	{
+		$this->closeHour = $closeHour;
+	}
+	
+	/**
+	 * Sets the closed minutes of the hour
+	 * 
+	 * @return void
+	 * @param object $closeMin the minutes of the hour the park closes
+	 */
+	public function setCloseMin($closeMin)
+	{
+		$this->closeMin = $closeMin;
+	}
+	
+	/**
+	 * The day of the month from 1 - 31 of the date 
+	 * @return void
+	 * @param object $day the day to set 
+	 */
+	public function setDay($day)
+	{
+		$this->day = $day;
+	}
+	
+	public function setMonth($month)
+	{
+		$this->month = $month;
+	}
+	
+	public function setYear($year)
+	{
+		$this->year = $year;
+	}
+	
+	public function getOpenHour()
+	{
+		return $this->openHour;
+	}
+	
+	public function getOpenMin()
+	{
+		return $this->openMin;
+	}
+	
+	public function getCloseHour()
+	{
+		return $this->closeHour;
+	}
+	
+	public function getCloseMin()
+	{
+		return $this->closeMin;
+	}
+	
+	public function getDay()
+	{
+		return $this->day;
+	}
+	
+	public function getMonth()
+	{
+		return $this->month;
+	}
+	
+	public function getYear()
+	{
+		return $this->year;
+	}
+}
+
+?>

@@ -1,0 +1,104 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * Get the home url of the site
+ *
+ * Returns the "fasspass_active" item from your config file
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('hide_fasspass'))
+{
+	function hide_fasspass()
+	{
+		$CI =& get_instance();
+		return $CI->config->item('hide_fasspass');
+	}
+}
+
+/**
+ * Get the home url of the site
+ *
+ * Returns the "home_url" item from your config file
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('home_url'))
+{
+	function home_url()
+	{
+		$CI =& get_instance();
+		return $CI->config->item('home_url');
+	}
+}
+
+/**
+ * the park time difference
+ *
+ * Returns the "park_time_diff" item from your config file
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('park_time_diff'))
+{
+	function park_time_diff()
+	{
+		$CI =& get_instance();
+		return $CI->config->item('park_time_diff');
+	}
+}
+
+/**
+ * Park Name
+ *
+ * Returns the "park_name" item from your config file
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('park_name'))
+{
+	function park_name()
+	{
+		$CI =& get_instance();
+		return $CI->config->item('park_name');
+	}
+}
+
+/**
+ * Cookie Tag
+ *
+ * Returns the "cookie_tag" item from your config file
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('cookie_tag'))
+{
+	function cookie_tag()
+	{
+		$CI =& get_instance();
+		return $CI->config->item('cookie_tag');
+	}
+}
+/**
+ * Get the Cookie Id from the client
+ *
+ * Returns the "cookieId" from the user.
+ *
+ * @access	public
+ * @return	string
+ */	
+if ( ! function_exists('getCookieId'))
+{
+	function getCookieId()
+	{
+		$cookieId = get_cookie(cookie_tag());
+
+		return $cookieId;
+	}
+}
+?>

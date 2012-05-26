@@ -1,0 +1,135 @@
+<?php
+
+
+/**
+ * This class is used to choose the correct database for the user coming in
+ * on a specific site. 
+ * 
+ * Therefore if the user comes in under animal-kingdom.coasterq.com or 
+ * www.animal-kingdom.coasterq.com this code selects the correct database to 
+ * display Animal Kingdoms data. 
+ */
+class DatabaseChooser
+{
+	public function getDatabase()
+	{
+		$userURL = $_SERVER['HTTP_HOST'];
+		return $this->findDatabaseName($userURL);
+	}
+	
+	/**
+	 * Find the database name from the clients URL
+	 * 
+	 * @return the name of the database
+	 * @param object $userURL - clients URL
+	 */
+	private function findDatabaseName($userURL)
+	{
+		if(strpos($userURL,  "animal-kingdom.coasterq.com") !== false)
+		{
+			return 'coaste6_animalkingdom';
+		}
+		else if(strpos($userURL ,  "busch-gardens-tampa.coasterq.com") !== false)
+		{
+			return 'coaste6_buschgardenstampa';
+		}
+		else if(strpos($userURL ,  "disneyland.coasterq.com") !== false)
+		{
+			return 'coaste6_disneyland';
+		}
+		else if(strpos($userURL ,  "disneyland-park.coasterq.com") !== false)
+		{
+			return 'coaste6_parcdisneyland';
+		}
+		else if(strpos($userURL ,  "epcot.coasterq.com") !== false)
+		{
+			return 'coaste6_epcot';
+		}
+		else if(strpos($userURL, "hollywood-studios.coasterq.com") !== false)
+		{
+			return 'coaste6_hollywoodstudios';
+		}
+		else if(strpos($userURL,  "islands-of-adventure.coasterq.com") !== false)
+		{
+			return 'coaste6_islandsOfAdventure';
+		}
+		else if(strpos($userURL,  "knotts-berry-farm.coasterq.com") !== false)
+		{
+			return 'coaste6_knottsberryfarm';
+		}
+		else if(strpos($userURL, "legoland-california.coasterq.com") !== false)
+		{
+			return 'coaste6_legolandcalifornia';
+		}
+		else if(strpos($userURL,  "magic-mountain.coasterq.com") !== false)
+		{
+			return 'coaste6_magicmountain';
+		}
+		else if(strpos($userURL,  "over-texas.coasterq.com") !== false)
+		{
+			return 'coaste6_overtexas';
+		}
+		else if(strpos($userURL,  "seaworld-orlando.coasterq.com") !== false)
+		{
+			return 'coaste6_seaworldorlando';
+		}
+		else if(strpos($userURL,  "tokyo-disneyland.coasterq.com") !== false)
+		{
+			return 'coaste6_tokyodisneyland';
+		}
+		else if(strpos($userURL, "tokyo-disneysea.coasterq.com") !== false)
+		{
+			return 'coaste6_tokyodisneysea';
+		}
+		else if(strpos($userURL,  "universal-studios-florida.coasterq.com") !== false)
+		{
+			return 'coaste6_universalStudiosFlorida';
+		}
+		else if(strpos($userURL, "universal-studios-hollywood.coasterq.com") !== false)
+		{
+			return 'coaste6_universalStudiosHollywood';
+		}
+		else if(strpos($userURL,  "walt-disney-studios-park.coasterq.com") !== false)
+		{
+			return 'coaste6_waltdisneystudiospark';
+		}
+		else if(strpos($userURL, "magic-kingdom.coasterq.com") !== false)
+		{
+			return 'coaste6_magickingdom';
+		}
+		else if(strpos($userURL, "california-adventure.coasterq.com") !== false)
+		{
+			return 'coaste6_californiaadventure';
+		}
+		else if(strpos($userURL,  "great-adventure.coasterq.com") !== false)
+		{
+			return 'coaste6_greatadventure';
+		}
+		else if(strpos($userURL,  "great-america.coasterq.com") !== false)
+		{
+			return 'coaste6_greatamerica';
+		}
+		else if(strpos($userURL,  "over-georgia.coasterq.com") !== false)
+		{
+			return 'coaste6_overgeorgia';
+		}
+		else if(strpos($userURL,  "discovery-kingdom.coasterq.com") !== false)
+		{
+			return 'coaste6_discoverykingdom';
+		}
+		else if(strpos($userURL,  "seaworld-san-antonio.coasterq.com") !== false)
+		{
+			return 'coaste6_seaworldorlando';
+		}
+		else if(strpos($userURL,  "kentucky-kingdom.coasterq.com") !== false)
+		{
+			return 'coaste6_kentuckykingdom';
+		}
+		else if(strpos($userURL,  "six-flags-america.coasterq.com") !== false)
+		{
+			return 'coaste6_sixflagsamerica';
+		}
+	}
+}
+
+?>

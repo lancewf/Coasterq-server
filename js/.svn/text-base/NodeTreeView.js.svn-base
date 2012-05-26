@@ -1,0 +1,115 @@
+/**
+ * Class instance tag
+ * 
+ * This is the static name of an instance of this class. 
+ */
+NodeTreeViewName =  "Node Tree View";
+
+/**
+ * This class displays a view to all the user to change the park they are looking
+ * at. 
+ */
+function NodeTreeView(nodeTreeBuilder)
+{
+	// ------------------------------------------------
+	// Private variables and data
+	// ------------------------------------------------
+	
+	this._root = nodeTreeBuilder.buildTree(NodeTreeViewName);
+	
+	// -------------------------------------------------------------------------
+	// Page Members
+	// -------------------------------------------------------------------------
+	
+	/**
+	 * Get the html used to display this page
+	 */
+	//public
+	this.getHTML = function()
+	{
+		this._root.setChildLink(this.replaceDiv);
+		
+		this._root.setIsChildrenVisible(true);
+		
+		var html =
+		
+		"<table align='center'><tr><td>" + 
+			this._root.getChildrenHTML() +
+		"</td></tr></table>";
+		
+		return html;
+	}
+	
+	/**
+	 * Set the page holder that this page is contained in
+	 */
+	 //public
+    this.setPageHolder = function(pageHolder)
+    {
+        this.pageHolder = pageHolder;
+    }
+
+    /**
+	 * Show this page
+	 */
+	 //public
+	this.showPage = function(replaceDiv)
+	{
+		this.replaceDiv = replaceDiv;
+
+        var html = this.getHTML();
+   
+        document.getElementById(this.replaceDiv).innerHTML = html;
+        
+        this.afterDisplayed();
+	}
+	
+	/**
+	 * Called when the page exits 
+	 */
+	 //public
+	this.exit = function()
+	{
+		//
+		// Do nothing
+		//
+	}
+	
+	this.toString = function()
+	{
+		return this.getName();
+	}
+	
+	/**
+	 * Get the distict page name. 
+	 */
+	 //public
+	this.getName = function()
+	{
+		return NodeTreeViewName;
+	}
+	
+    //public
+    this.afterDisplayed = function()
+	{
+
+	}
+	
+	// ----------------------------------------------------------------------
+	// Private Members
+	// ----------------------------------------------------------------------
+	
+	this.clicked = function(subReplaceDiv)
+	{
+		this._root.click(subReplaceDiv);
+	}
+}
+
+function clicked(subReplaceDiv, viewName)
+{
+    var nodeTreeView = pageHolder.getPage(viewName);
+    
+    nodeTreeView.clicked(subReplaceDiv);
+
+    return false;
+}
