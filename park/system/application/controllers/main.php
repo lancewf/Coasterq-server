@@ -92,12 +92,6 @@ class Main extends Controller
 	   $data = $this->getData();
   	   $data['startPage'] = $startPage;
   	   
-  	   	if($this->facebook_connect->isConnected())
-		{
-			$facebookUserId = $this->facebook_connect->user_id;
-			$this->user_model->logInUser($facebookUserId);
-		}
-  	   
 	   $this->load->view('index', $data);
 	}
 	

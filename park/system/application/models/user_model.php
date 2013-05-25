@@ -33,29 +33,6 @@ class User_model extends Model
 		}
 	}
 	
-	// returns true for new user false for returning user
-	public function logInUser($facebookUserId)
-	{
-		$isNewUser = false;
-		$user = null;
-		if(!$this->getFacebookUser($facebookUserId))
-		{
-			$user = $this->createNewFacebookUser($facebookUserId);
-			
-			$isNewUser = true;
-		}
-		else
-		{
-			$user = $this->logInFacebookUser($facebookUserId);
-			
-			$isNewUser = false;
-		}
-		
-		$this->setTimeStamp($user);
-		
-		return $isNewUser;
-	}
-	
 	private function setTimeStamp($user)
 	{
 		$parkclock_model = new Parkclock_model();
@@ -88,14 +65,6 @@ class User_model extends Model
 			{
 				$user = $this->createNewGenericUser($cookieId);
 			}
-			else if($this->isFacebookUser($user) && 
-				!$this->facebook_connect->isConnected())
-			{
-				$this->logOutUser();
-				
-				$cookieId = $this->createNewCookie();
-				$user = $this->createNewGenericUser($cookieId);
-			}
 		}
 		
 		$this->setTimeStamp($user);
@@ -107,84 +76,10 @@ class User_model extends Model
 	{
 		delete_cookie(cookie_tag());
 	}
-	
-	public function getFacebookUser($facebookUserId)
-	{
-		$criteria = new Criteria();
-
-		$criteria->add(UserPeer::NAME, $facebookUserId);
-		
-		$users = UserPeer::doSelect($criteria);
-		
-		if(count($users) > 0)
-		{
-			return $users[0];
-		}
-		else
-		{
-			return null;
-		}
-	}
    
    	// -------------------------------------------------------------------------
 	// Private Members
 	// -------------------------------------------------------------------------
-   
-	private function logInFacebookUser($facebookUserId)
-	{
-		$user = $this->getFacebookUser($facebookUserId);
-		
-		$cookieId = $user->getId();
-		
-		set_cookie(cookie_tag(), $cookieId, 60*60*24*364*2);
-		
-		return $user;
-	}
-	
-	private function createNewFacebookUser($facebookUserId)
-	{
-		$cookieId = getCookieId();
-		
-		$user = $this->getUser($cookieId);
-
-		if($user)
-		{
-			$user->delete();
-		}
-		
-		$newUser = new RegisterUser();	
-
-		if(!$cookieId)
-		{
-			$cookieId = $this->createNewCookie();
-		}
-		
-		$newUser->setId($cookieId);
-		$newUser->setName($facebookUserId);
-		
-		$itinerary = new Itinerary();
-		
-		$itinerary->setUser($newUser);
-		$itinerary->setDate(Time());
-	
-		$itinerary->save();
-		
-		$newUser->save();
-
-		return $newUser;
-	}
-	
-	private function isFacebookUser($user)
-	{
-		if($user instanceof RegisterUser)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
 	
     private function createNewCookie()
     {
