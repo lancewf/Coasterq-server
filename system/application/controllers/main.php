@@ -37,39 +37,6 @@ class Main extends Controller
 	public function index()
 	{
 		$this->load->view('index');
-
-		if($this->isInFacebookCanvasAndNotAdded() )
-		{
-			//echo "in";
-			$this->facebook_connect->fb->require_login();
-		}
-		else
-		{
-			//echo "out";
-		}
-	}
-	
-	public function welcomeFacebook()
-	{
-		$this->load->view('index');
-	}
-	
-	private function isInFacebookCanvasAndNotAdded()
-	{
-		parse_str($_SERVER['QUERY_STRING'], $_GET);
-
-		$this->_obj =& get_instance();
-
-		if(array_key_exists('fb_sig_in_iframe', $_GET))
-		{
-			if((strcmp($this->_obj->config->item('facebook_api_key'), $_GET['fb_sig_api_key']) == 0) && 
-			   (strcmp("0", $_GET['fb_sig_added']) == 0))
-			{
-				return true;
-			}
-		}
-		
-		return false;
 	}
 
 	public function sitemap()
@@ -86,10 +53,5 @@ class Main extends Controller
 	{
 		$this->load->view('termsofuse');
 	}
-	
-	// -------------------------------------------------------------------------
-	// Private Members
-	// -------------------------------------------------------------------------
-
 }
 ?>

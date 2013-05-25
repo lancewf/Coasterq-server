@@ -39,7 +39,7 @@
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('propel', 'facebook_connect');
+$autoload['libraries'] = array('propel');
 
 
 /*
